@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>时间戳转换日期</title>
+		<script src="../../js/jquery-2.2.1.js"></script>
+	</head>
+	<body>
+		<div class="d1 center">
+			比赛开始时间：
+			<span style="font-size: 1.2rem;" class="date1">
+				<!--{{match.startTime | date: 'yyyy-MM-dd'}}-->
+			</span>
+		</div><br/>
+		<div class="d2 center">
+			比赛结束时间：
+			<span style="font-size: 1.2rem;" class="date2">
+				<!--{{match.endTime | date: 'yyyy-MM-dd'}}-->
+			</span>
+		</div><br/>
+		<div class="d3 center">
+			报名截止时间：
+			<span style="font-size: 1.2rem;" class="date3">
+				<!--{{match.deadline | date: 'yyyy-MM-dd HH:mm:ss'}}-->
+			</span>
+		</div>
+	</body>
+	<script>
+		//  全局方法  需要转换 直接调用把需要转换的时间戳传进去
+		function TranDate(date){
+	    	var data = new Date(date);
+		    var year = data.getFullYear();
+		    var month = data.getMonth();
+		    var date = data.getDate();
+		    return [year,month,date].join('-');
+		}
+		
+		var startTime = TranDate(1527245175000),
+		    endTime = TranDate(1527245175000),
+		    deadline = TranDate(1527245175000);
+		$(".date1").html(startTime);
+	    $(".date2").html(endTime);
+	    $(".date3").html(deadline);
+	</script>
+</html>

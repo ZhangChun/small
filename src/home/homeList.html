@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>home</title>
+		<style>
+			ul li {
+			    float: left;
+			    width: 32px;
+			    height: 32px;
+			    font-size:20px;
+			    list-style: none;
+			}
+			ul li:nth-child(1) {
+			    -webkit-animation: move .2s .1s infinite alternate;
+			    animation: move .2s .1s infinite alternate;
+			}
+			ul li:nth-child(2) {
+			    -webkit-animation: move .2s .2s infinite alternate;
+			    animation: move .2s .2s infinite alternate;
+			}
+			ul li:nth-child(3) {
+			    -webkit-animation: move .2s .3s infinite alternate;
+			    animation: move .2s .3s infinite alternate;
+			}
+			@-webkit-keyframes move{
+				0%
+				{
+					-webkit-transform:translateY(0);
+				}
+				100%
+				{
+					-webkit-transform:translateY(-8px)
+				};
+			}
+			.d1{
+				cursor:pointer;
+			}
+			.d1 span:hover{
+				color:red;
+				cursor:pointer;
+				display: inline-block;
+				transform:translateY(-5px)
+			}
+			.d1 span{
+				height:30px;
+				font-size: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="dj">
+			<li style="">C</li>
+			<li style="">S</li>
+			<li style="">3</li>
+		</ul><br />
+		<div class="d1">
+			<span>C</span>
+			<span>S</span>
+			<span>S</span>
+			<span>3</span>
+			<span>动</span>
+			<span>画</span>
+			<span>C</span>
+			<span>S</span>
+			<span>S</span>
+			<span>3</span>
+			<span>动</span>
+			<span>画</span>
+		</div>
+	</body>
+	<script src="../../js/jquery-2.2.1.js"></script>
+	<script>
+		
+		$(document).ready(function(){
+			$(".codes").on("click",function(){
+				var serUrl = "http://192.168.1.140:8199/common/getPicCode?phone=8613022126370";
+				var xmlhttp;
+				xmlhttp=new XMLHttpRequest();
+				xmlhttp.open("GET",serUrl,true);
+				xmlhttp.responseType = "blob";
+				xmlhttp.onload = function(){
+				    console.log(this);
+				    if (this.status == 200) {
+				        var blob = this.response;
+				        var img = document.createElement("img");
+				        console.log("imgss",img)
+				        img.onload = function(e) {
+				            window.URL.revokeObjectURL(img.src); 
+				        };
+				        img.src = window.URL.createObjectURL(blob);
+				        document.body.appendChild(img); 
+				        $(".igs").html("")
+						$(".igs").append(img)
+				    }
+				}
+				xmlhttp.send();
+			})
+		})
+	</script>
+</html>

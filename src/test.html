@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>td加斜线</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+<style>
+	table{
+	border-collapse:collapse;
+	width: 100%;
+	}
+	table,tr,td{
+	border:1px solid black;
+	}
+	table tr td:first-child{
+	width:100px;/*这里需要自己调整，根据自己的需求调整宽度*/
+	height:50px;/*这里需要自己调整，根据自己的需求调整高度*/
+	position: relative;
+	}
+	td[class=first]:before{
+	content: "";
+	position: absolute;
+	width: 1px;
+	height:114px;/*这里需要自己调整，根据td的宽度和高度*/
+	top:0;
+	left:0;
+	background-color: black;
+	display: block;
+	transform: rotate(-63deg);/*这里需要自己调整，根据线的位置*/
+	transform-origin: top;
+	}
+	.first span{
+		display: block;
+		width:98%;
+	}
+	.first .s1{
+		text-align: right;
+	}
+	
+	table th{
+            white-space: nowrap;
+        }
+        table td{
+            white-space: nowrap;
+        }
+        body,table{
+         font-size:12px;
+        }
+  table{
+         empty-cells:show; 
+         border-collapse: collapse;
+         margin:0 auto;
+        }
+ 
+  h1,h2,h3{
+   font-size:12px;
+   margin:0;
+   padding:0;
+  }
+</style>
+</head>
+<body>
+	<table>
+		<thead id="matchStaff">
+			<tr>
+				<td class="first" width="100" height="40" style="font-size: 0.9rem;">
+					<span class="s1">裁判</span>
+					<span class="s2">选手</span>
+				</td>
+				<td width="70" v-for="staff in staffGroup">{{staff.matchStaff.name}}</td>
+				<td width="70" v-for="staff in staffGroup">{{staff.matchStaff.name}}</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+			<td>ddd</td>
+			<td>eee</td>
+			<td>fff</td>
+		</tr>
+		</tbody>
+		
+	</table>
+	<table>
+				<thead id="matchStaff">
+					<tr>
+						<td class="first" width="100" height="40" style="font-size: 0.9rem;">
+							<span class="s1">裁判</span>
+							<span class="s2">选手</span>
+						</td>
+						<td width="70" v-for="staff in staffGroup">{{staff.matchStaff.name}}</td>
+						<td width="70" v-for="staff in staffGroup">{{staff.matchStaff.name}}</td>
+					</tr>
+				</thead>
+				<tbody id="app">
+					<!--<tr v-for="list in lists">
+						<td height="40">{{list.matchTeam.id}}</td>
+						<td>
+							<img class="imgs" src="../../images/gou.png" alt="" />
+						</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>-->
+				</tbody>
+			</table>
+</body>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form>
+			<div class="phoneLogin">
+				<p>
+					<input class="code" type="text" placeholder="输入图片验证码"/>
+					<span class="imgs">
+						<button type="button" class="codes">获取图片验证码</button>
+						<img class="vcode"  alt="验证码" />
+					</span>
+				</p>
+				<p>
+					<button type="submit" ng-click="login(credentials)">登录</button>
+				</p>
+			</div>
+		</form>
+	</body>
+	<script src="../../js/jquery-2.2.1.js"></script>
+	<script>
+		//  解决请求图片验证码乱码
+		$(document).ready(function(){
+			$(".codes").on("click",function(){
+				var serUrl = "http://192.168.1.140:8199/common/getPicCode?phone=8613022126370";
+				var xmlhttp;
+				xmlhttp=new XMLHttpRequest();
+				xmlhttp.open("GET",serUrl,true);
+				xmlhttp.responseType = "blob";
+				xmlhttp.onload = function(){
+				    console.log(this);
+				    if (this.status == 200) {
+				        var blob = this.response;
+				        var img = document.createElement("img");
+				        console.log("imgss",img)
+				        img.onload = function(e) {
+				            window.URL.revokeObjectURL(img.src); 
+				        };
+				        img.src = window.URL.createObjectURL(blob);
+				        document.body.appendChild(img); 
+				        $(".igs").html("")
+						$(".igs").append(img)
+				    }
+				}
+				xmlhttp.send();
+			})
+		})
+	</script>
+</html>

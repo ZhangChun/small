@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+		<style>
+			ul{
+				overflow: hidden;
+				padding: 0;
+			}
+			ul li{
+				float: left;
+				width:50px;
+				padding:0.5rem 1rem;
+				text-align: center;
+				list-style: none;
+				background: #ddd;
+				border:1px solid gray;
+			}
+			.backgs{
+				background:#209E91;
+				color:#fff;
+			}
+			.btn{
+				padding:0.5rem 1rem;
+				background: #209E91;
+				color: #FFFFFF;
+				border:none;
+				border-radius: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="hello">
+		    <ul>
+		      <li v-for="(list, index) in list" :class="{'backgs':bg === index}" @click="btn(index)">{{list}}</li>
+		    </ul>
+		</div>
+		
+		<div id="app">
+			<input type="text" v-model="datas.name"/><br /><br />
+			<input type="text" v-model="datas.phone"/><br /><br />
+			<button class="btn" @click="submit()">提交</button>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var app = new Vue({
+			el:".hello",
+			data:{
+				list: ['苹果', '香蕉', '菠萝', '芒果'],
+      			bg: 0
+			},
+			methods:{
+				btn:function(index){
+					this.bg = index;
+				}
+			}
+		})
+		var aa = "你好";
+		var app =new Vue({
+			el:"#app",
+			data:{
+				datas:{
+					name:"",
+					phone:""
+				}
+			},
+			methods:{
+				submit:function(){
+					console.log("this.datassssssss",JSON.stringify(this.datas))
+					console.log(aa)
+				}
+			}
+		})
+		Vue.component('todo-item', {
+		  template: '<li>这是个待办项</li>'
+		})
+	</script>
+</html>
