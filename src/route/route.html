@@ -3,20 +3,128 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>angular路由</title>
+		<!--<link href="../../js/bootstrap.css" rel="stylesheet" />   
+		<link href="../../js/bootstrap-datetimepicker.min.css" rel="stylesheet" />  
 		<script src="../../js/jquery-2.2.1.js"></script>
 		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
     	<script src="https://cdn.bootcss.com/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+    	<script src="../../js/bootstrap.min.js"></script>  
+		<script src="../../js/bootstrap-datetimepicker.min.js"></script>  
+		<script src="../../js/bootstrap-datetimepicker.zh-CN.js"></script> -->
+		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+<script src="https://cdn.bootcss.com/moment.js/2.18.1/moment-with-locales.min.js"></script>
+<link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+    	<style>
+    		.inputs{
+    			height:30px;
+    			padding-left:10px;
+    			font-size:18px;
+    			border-radius: 5px;
+    			border:none;
+    			border:1px solid grey;
+    		}
+    		.box{
+    			position: relative;
+    		}
+    		.times{
+    			width:200px;
+    			position:absolute;
+    			bottom:0;
+    			left: 0;
+    		}
+    		.times .d1{
+    			width: 48%;
+    			display: inline-block;
+    			height:30px;
+    			padding:0;
+    		}
+    	</style>
 	</head>
 	<body ng-app="myApp" ng-controller="matchBackUp">
+		<!--<input type="text" placeholder="开始时间" id="start"/>
+		<input type="text" placeholder="结束时间" id="end"/>-->
+		<div class="row">
+		    <div class='col-sm-6'>
+		        <div class="form-group">
+		            <label>选择日期+时间：</label>
+		            <!--指定 date标记-->
+		            <div class='input-group date' id='datetimepicker2'>
+		                <input type='text' class="form-control" />
+		                <span class="input-group-addon">
+		                    <span class="glyphicon glyphicon-calendar"></span>
+		                </span>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+
+
+		
   	</body>
 
 
   <script type="text/javascript">
-    var app = angular.module('myApp', []);
-	app.controller('matchBackUp', function($scope,$http,$stateParams) {
-		console.log("aaaa")
-		$scope.id = Number($stateParams.id)
-		console.log("$scope.id",$scope.id)
-	})
+  	$(function () {
+	    $('#datetimepicker2').datetimepicker({
+	        format: 'YYYY-MM-DD hh:mm',
+	        locale: moment.locale('zh-cn')
+	    });
+	});
+
+
+//  var app = angular.module('myApp', []);
+//	app.controller('matchBackUp', function($scope,$http) {
+//		console.log("aaaa")
+//		$(function(){
+//		    $("#start").datetimepicker({
+//		        format:'yyyy-mm-dd hh:ii:ss',  //格式  如果只有yyyy-mm-dd那就是0000-00-00
+//		        autoclose:true,//选择后是否自动关闭 
+//		        minView:0,//最精准的时间选择为日期  0-分 1-时 2-日 3-月
+//		        language:  'zh-CN', //中文
+//		        weekStart: 1, //一周从星期几开始
+//		        todayBtn:  1,
+//		        autoclose: 1,
+//		        todayHighlight: 1,
+//		        startView: 2,
+//		        forceParse: 0,
+//		       // daysOfWeekDisabled:"1,2,3", //一周的周几不能选 格式为"1,2,3"  数组格式也行
+//		        todayBtn : true,  //在底部是否显示今天
+//		        todayHighlight :false, //今天是否高亮显示
+//		        keyboardNavigation:true, //方向图标改变日期  必须要有img文件夹 里面存放图标
+//		        showMeridian:false,  //是否出现 上下午
+//		        initialDate:new Date()
+//		        //startDate: "2017-01-01" //日期开始时间 也可以是new Date()只能选择以后的时间
+//		    }).on("changeDate",function(){
+//		        var start = $("#start").val();
+//		        $("#end").datetimepicker("setStartDate",start);
+//		    }); 
+//		    $("#end").datetimepicker({
+//		        format:'yyyy-mm-dd hh:ii:ss',  //格式  如果只有yyyy-mm-dd那就是0000-00-00
+//		        autoclose:true,//选择后是否自动关闭 
+//		        minView:0,//最精准的时间选择为日期  0-分 1-时 2-日 3-月
+//		        language:  'zh-CN', //中文
+//		        weekStart: 1, //一周从星期几开始
+//		        todayBtn:  1,
+//		        autoclose: 1,
+//		        todayHighlight: 1,
+//		        startView: 2,
+//		        forceParse: 0,
+//		        //daysOfWeekDisabled:"1,2,3", //一周的周几不能选
+//		        todayBtn : true,  //在底部是否显示今天
+//		        todayHighlight :false, //今天是否高亮显示
+//		        keyboardNavigation:true, //方向图标改变日期  必须要有img文件夹 里面存放图标
+//		        showMeridian:false  //是否出现 上下午
+//		       // startDate: "2017-01-01"  //开始时间  ENdDate 结束时间
+//		    }).on("changeDate",function(){
+//		        var end = $("#end").val();
+//		        $("#start").datetimepicker("setEndDate",end);
+//		    });   
+//		});
+//	})
   </script>
 </html>

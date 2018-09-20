@@ -24,6 +24,24 @@
 				<!--{{match.deadline | date: 'yyyy-MM-dd HH:mm:ss'}}-->
 			</span>
 		</div>
+		<div class="d1 center">
+			比赛开始时间：
+			<span style="font-size: 1.2rem;" class="date4">
+				<!--{{match.startTime | date: 'yyyy-MM-dd'}}-->
+			</span>
+		</div><br/>
+		<div class="d2 center">
+			比赛结束时间：
+			<span style="font-size: 1.2rem;" class="date5">
+				<!--{{match.endTime | date: 'yyyy-MM-dd'}}-->
+			</span>
+		</div><br/>
+		<div class="d3 center">
+			报名截止时间：
+			<span style="font-size: 1.2rem;" class="date6">
+				<!--{{match.deadline | date: 'yyyy-MM-dd HH:mm:ss'}}-->
+			</span>
+		</div>
 	</body>
 	<script>
 		//  全局方法  需要转换 直接调用把需要转换的时间戳传进去
@@ -34,12 +52,96 @@
 		    var date = data.getDate();
 		    return [year,month,date].join('-');
 		}
-		
-		var startTime = TranDate(1527245175000),
-		    endTime = TranDate(1527245175000),
-		    deadline = TranDate(1527245175000);
+
+		var startTime = TranDate(1535364941450),
+		    endTime = TranDate(1532401919000),
+		    deadline = TranDate(1532401919000);
 		$(".date1").html(startTime);
 	    $(".date2").html(endTime);
 	    $(".date3").html(deadline);
+
+
+		let myDate = new Date();
+		let year = myDate.getFullYear(); //获取完整的年份(4位,1970-????)
+		let month = myDate.getMonth()+1; //获取当前月份(0-11,0代表1月)
+		let day = myDate.getDate(); //获取当前日(1-31)
+		if(day<10){
+			 day = '0'+day
+		}
+		if(month<10){
+			 month = "0"+month
+		}
+		let nowTime=year+"-"+month+"-"+day;
+		let times = "2017-04-05";
+		if(nowTime > times){
+			console.log(nowTime)
+		}else{
+			console.log(times)
+		}
+
+		//将日期格式转换成时间戳
+		var date = new Date();
+	    // 有三种方式获取
+	    var time1 = date.getTime();
+	    var time2 = date.valueOf();
+	    var time3 = Date.parse(date);
+	    console.log(time1);//1398250549123
+	    console.log(time2);//1398250549123
+	    console.log(time3);//1398250549000
+	    $(".date4").html(time1);
+	    $(".date5").html(time2);
+	    $(".date6").html(time3);
+		
+		
+		//  获取 3天后的时间戳
+		let dd = new Date()
+	    dd.setDate(dd.getDate() + 3)
+	    let time = dd.getTime();
+	    console.log("timeeeeeee",time)
+	    
+	    //  获取当前时间前后N天日期的方法，可以得到昨天，今天，明天，一月前，三月前，半年前，一年前的日期，只要修改参数就可以实现得到任何一个天数。
+	    var dd = new Date();  
+	   	dd.setDate(dd.getDate()+8);//获取AddDayCount天后的日期  
+	   	var y = dd.getFullYear();   
+	   	var m = (dd.getMonth()+1)<10?"0"+(dd.getMonth()+1):(dd.getMonth()+1);//获取当前月份的日期，不足10补0  
+	   	var d = dd.getDate()<10?"0"+dd.getDate():dd.getDate();//获取当前几号，不足10补0  
+	   	var time =  y+"-"+m+"-"+d;   
+		console.log("timeeeeeeee",time)
+		
+		//  获取两个时间戳相差几天
+		var start=1491789600000;//2017-4-10 10:00
+		var end=1494381600000;//2017-5-10 10:00
+		
+		var utc=end-start;
+		
+		console.log(utc/(24*60*60*1000));//30
+	    //  测试localstorage大小限制和sessionStorage大小限制
+//	    (function() {
+//		    if(!window.sessionStorage) {
+//		        console.log('当前浏览器不支持localStorage!')
+//		    }
+//		    var test = '0123456789';
+//		    var add = function(num) {
+//		        num += num;
+//		        if(num.length == 10240) {
+//		            test = num;
+//		            return;
+//		        }
+//		        add(num);
+//		    }
+//		    add(test);
+//		    var sum = test;
+//		    var show = setInterval(function(){
+//		        sum += test;
+//		        try {
+//		            window.sessionStorage.removeItem('test');
+//		            window.sessionStorage.setItem('test', sum);
+//		            console.log(sum.length / 1024 + 'KB');
+//		        } catch(e) {
+//		            alert(sum.length / 1024 + 'KB超出最大限制');
+//		            clearInterval(show);
+//		        }
+//		    }, 0.1)
+//		})()
 	</script>
 </html>

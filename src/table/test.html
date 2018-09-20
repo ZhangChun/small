@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit" />
+    <title>表格合并</title>
+	<link rel="stylesheet" href="../../css/base.css" type="text/css" />
+    <style type="text/css">
+        .classify{
+            border: 1px solid lightgrey;
+            width: 80px;
+            height: 30px;
+            margin-bottom: 5px;
+        }
+        .category{
+            border:1px solid lightgrey;
+            border-radius: 2px;
+            width: 78px;
+            height: 27px;
+            margin-bottom: 5px;
+            padding-top: 2px;
+            padding-left: 2px;
+        }
+        .option{
+            border: 1px solid lightgrey;
+            width: 80px;
+            height: 30px;
+            margin-bottom: 5px;
+            margin-left: 5px;
+        }
+        .category_option{
+            border:1px solid lightgrey;
+            border-radius: 2px;
+            width: 78px;
+            height: 27px;
+            margin-bottom: 5px;
+            padding-top: 2px;
+            padding-left: 2px;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="c-main ptb20">
+    <input type="button" value="添加规格" class="classify" onclick="addClassify();">
+    <div class="group">
+    </div>
+    <h3 class="mt30 mb10">内容自动合并:</h3>
+    <div id="generator_table">
+    </div>
+</div>
+
+<script type="text/javascript" src="../../js/jquery-2.2.1.js"></script>
+<script type="text/javascript">
+    function addClassify(){
+        var html = '<div class="good_option"><input type="text" value="" class="category" placeholder="规格"><input type="button" value="添加规格项" class="option" onclick="addOption(this);"></div>';
+        var group = $(".group");
+        group.append(html);
+    }
+    function addOption(obj){
+        var $this = $(obj);
+        var $parent = $this.parent();
+        var html = '<input type="text" value="" class="category_option" placeholder="规格项">';
+        $parent.find(".option").before(html);
+    }
+
+    function generatorTable(){
+        var tableHead = '';
+        var tableBody = '';
+        var len = $(".good_option").length;
+        if(len > 0){
+            var table = '<table class="tb tb-b c-100 c-t-center">';
+            $(".category").each(function(){
+                var $this = $(this);
+                tableHead += "," + $this.val();
+            });
+            if(tableHead){
+                tableHead = tableHead.substring(1);
+                table += generatorTableHead(tableHead);
+                $(".good_option").each(function(){
+                    var $this = $(this);
+                    tableBody += ',"' + $this.find(".category:first").val() + '":"';
+                    var options = "";
+                    $this.find(".category_option").each(function(){
+                        var $that = $(this);
+                        options += "," + $that.val();
+                    })
+                    if(options){
+                        options = options.substring(1);
+                    }
+                    tableBody += options + '"'
+                });
+                if(tableBody){
+                    tableBody = tableBody.substring(1);
+                    tableBody = '{' + tableBody + '}';
+                    table += generatorTableBody(tableBody);
+                }
+                table += '</table>';
+                $("#generator_table").html(table);
+            }
+        }
+    }
+
+    // 生成表头
+    function generatorTableHead(tableHead){
+        var thead = '<thead><tr>';
+        var ths = tableHead.split(",");
+        $.each(ths,function(i){
+            thead += '<th>' + ths[i] + '</th>';
+        })
+        thead += '<th>图片</th><th>单买价</th><th>拼团价</th><th>数量</th><th>商家编码</th></tr></thead>';
+        return thead;
+    }
+    // 生成表格体
+    function generatorTableBody(tableBody){
+        var tbJson = eval('(' + tableBody + ')');
+        var tbody = '<tbody>';
+        var tbArr = new Array();
+        $.each(tbJson,function(key,value){
+            var dataList = value.split(",");
+            tbArr.push(dataList);
+        });
+        var res = combine(tbArr);
+        var row = [];
+        var rowspan = res.length;
+        for(var n = 0; n < tbArr.length; n++) {
+            if(tbArr[n].length == 1){
+                row[n] = res.length / tbArr[n].length
+            }else{
+                row[n] = parseInt(rowspan/tbArr[n].length);
+                rowspan = row[n];
+            }
+        }
+        // row.reverse();
+        var str = "";
+        var len = res[0].length;
+        for (var i = 0; i < res.length; i++) {
+            var tmp = "";
+            for(var j=0; j<len; j++) {
+                if(i % row[j] == 0 && row[j] > 1) {
+                    tmp += "<td rowspan='"+ row[j] +"'>" + res[i][j] + "</td>";
+                }else if(row[j] == 1){
+                    tmp += "<td>" + res[i][j] + "</td>";
+                }
+            }
+            str += "<tr>" + tmp + "<td></td><td></td><td></td><td></td><td></td></tr>";
+        }
+        tbody += str;
+        tbody += '</tbody>';
+        return tbody;
+    }
+
+    function combine(arr) {
+        var r = [];
+        (function f(t, a, n) {
+            if (n == a.length) return r.push(t);
+            for (var i = 0; i < a[n].length; i++) {
+                f(t.concat(a[n][i]), a, n + 1);
+            }
+        })([], arr, 0);
+        return r;
+    }
+
+    $(document).on("blur",".category,.category_option",function(){
+        generatorTable();
+    })
+</script>
+</body>
+</html>

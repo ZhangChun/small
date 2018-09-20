@@ -17,7 +17,7 @@
 				text-align: center;
 				list-style: none;
 				background: #ddd;
-				border:1px solid gray;
+				border:1px solid #eee;
 			}
 			.backgs{
 				background:#209E91;
@@ -77,5 +77,14 @@
 		Vue.component('todo-item', {
 		  template: '<li>这是个待办项</li>'
 		})
+		
+		var Person = function(name){
+		    this.name = name; // tip: 当函数执行时这个 this 指的是谁？
+		  };
+		  Person.prototype.getName = function(){
+		    return this.name;  // tip: 当函数执行时这个 this 指的是谁？
+		  }
+		  var person1 = new person('Mick');
+		  person1.getName(); //Mick
 	</script>
 </html>

@@ -4,22 +4,22 @@
 		<meta charset="UTF-8">
 		<title>home</title>
 		<style>
-			ul li {
+			#dj li {
 			    float: left;
 			    width: 32px;
 			    height: 32px;
 			    font-size:20px;
 			    list-style: none;
 			}
-			ul li:nth-child(1) {
+			#dj li:nth-child(1) {
 			    -webkit-animation: move .2s .1s infinite alternate;
 			    animation: move .2s .1s infinite alternate;
 			}
-			ul li:nth-child(2) {
+			#dj li:nth-child(2) {
 			    -webkit-animation: move .2s .2s infinite alternate;
 			    animation: move .2s .2s infinite alternate;
 			}
-			ul li:nth-child(3) {
+			#dj li:nth-child(3) {
 			    -webkit-animation: move .2s .3s infinite alternate;
 			    animation: move .2s .3s infinite alternate;
 			}
@@ -46,6 +46,50 @@
 				height:30px;
 				font-size: 20px;
 			}
+			
+		    
+		    .ti{
+		    	-webkit-transform: rotateX(57deg) rotateY(-30deg);;
+		    	position: relative;
+		    	width:300px;
+		    	margin: 200px auto;
+		    	transition: all 8s;
+				transform-style: preserve-3d;
+		    }
+		    .ti div{
+		    	width:200px;
+		    	height:200px;
+		    	text-align: center;
+		    	line-height: 200px;
+		    	background:#ddd;
+		    	opacity: .2;
+		    	position: absolute;
+		    	border:1px solid red;
+		    }
+		    .qian{
+		    	transform:translateZ(100px);  
+		    }
+		    .hou{
+		    	 transform:translateZ(-100px);  
+		    }
+		    .top{
+		    	transform: rotateX(90deg) translateZ(100px);
+		    }
+		    .bottom{
+		    	transform: rotateX(-90deg) translateZ(100px);
+		    }
+		    .left{
+		    	transform:rotateY(-90deg) translateZ(100px);  
+		    }
+		    .right{
+		    	transform:rotateY(90deg) translateZ(100px);  
+		    }
+		    
+		    .tab li{
+		    	float: left;
+			    font-size:20px;
+			    list-style: none;
+		    }
 		</style>
 	</head>
 	<body>
@@ -68,34 +112,29 @@
 			<span>动</span>
 			<span>画</span>
 		</div>
+		
+		<div class="ti">
+			<div class="qian">前</div>
+			<div class="hou">后</div>
+			<div class="top">上</div>
+			<div class="bottom">下</div>
+			<div class="left">左</div>
+			<div class="right">右</div>
+		</div>
+		
+		<ul class="tab">
+			<li>
+				<span>前端开发^</span>
+				<span>前端开发ˇ</span>
+			</li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
 	</body>
 	<script src="../../js/jquery-2.2.1.js"></script>
 	<script>
 		
-		$(document).ready(function(){
-			$(".codes").on("click",function(){
-				var serUrl = "http://192.168.1.140:8199/common/getPicCode?phone=8613022126370";
-				var xmlhttp;
-				xmlhttp=new XMLHttpRequest();
-				xmlhttp.open("GET",serUrl,true);
-				xmlhttp.responseType = "blob";
-				xmlhttp.onload = function(){
-				    console.log(this);
-				    if (this.status == 200) {
-				        var blob = this.response;
-				        var img = document.createElement("img");
-				        console.log("imgss",img)
-				        img.onload = function(e) {
-				            window.URL.revokeObjectURL(img.src); 
-				        };
-				        img.src = window.URL.createObjectURL(blob);
-				        document.body.appendChild(img); 
-				        $(".igs").html("")
-						$(".igs").append(img)
-				    }
-				}
-				xmlhttp.send();
-			})
-		})
 	</script>
 </html>
