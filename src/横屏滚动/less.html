@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>横屏无线滚动</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<style>
+			header{
+				/*width:100%;*/
+				
+			}
+			.dd{
+				display: block;
+				width:4700px;
+				overflow: auto;
+				transform: translateX(0px);
+				animation: scorll 100s linear infinite;
+			}
+			.dd:hover{
+				animation-play-state:paused;
+			}
+			@-webkit-keyframes scorll{
+				from{transform: translateX(0px);}
+				to{transform: translateX(-4325px);}
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<a class="dd">
+				<div class="d1">
+					通知：1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+					通知：2222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222
+					通知：3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
+					通知：4444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444
+					通知：5555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555
+				</div>
+			</a>
+		</header>
+	</body>
+</html>

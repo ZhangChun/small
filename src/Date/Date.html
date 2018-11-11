@@ -53,7 +53,7 @@
 		    return [year,month,date].join('-');
 		}
 
-		var startTime = TranDate(1535364941450),
+		var startTime = TranDate(1545041381846),
 		    endTime = TranDate(1532401919000),
 		    deadline = TranDate(1532401919000);
 		$(".date1").html(startTime);
@@ -72,7 +72,7 @@
 			 month = "0"+month
 		}
 		let nowTime=year+"-"+month+"-"+day;
-		let times = "2017-04-05";
+		let times = "2017-1-05";
 		if(nowTime > times){
 			console.log(nowTime)
 		}else{
@@ -85,7 +85,7 @@
 	    var time1 = date.getTime();
 	    var time2 = date.valueOf();
 	    var time3 = Date.parse(date);
-	    console.log(time1);//1398250549123
+	    console.log(times);//1398250549123
 	    console.log(time2);//1398250549123
 	    console.log(time3);//1398250549000
 	    $(".date4").html(time1);
@@ -94,10 +94,10 @@
 		
 		
 		//  获取 3天后的时间戳
-		let dd = new Date()
-	    dd.setDate(dd.getDate() + 3)
-	    let time = dd.getTime();
-	    console.log("timeeeeeee",time)
+//		let dd = new Date()
+//	    dd.setDate(dd.getDate() + 3)
+//	    let time = dd.getTime();
+//	    console.log("timeeeeeee",time)
 	    
 	    //  获取当前时间前后N天日期的方法，可以得到昨天，今天，明天，一月前，三月前，半年前，一年前的日期，只要修改参数就可以实现得到任何一个天数。
 	    var dd = new Date();  
