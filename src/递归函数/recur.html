@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+		<style>
+			html,body{
+				margin: 0;
+				padding: 0;
+			}
+			.container{
+				width: 100%;
+				height: 100%;
+				margin: auto;
+			}
+			.container canvas{
+				position: absolute;
+			    left: 50%;
+			    transform: translateX(-50%);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<canvas id="mycanvas"></canvas>
+		</div>
+		
+		<script>
+//			function sum(n){
+//				if(n == 1 || n == 2){
+//					return 1;
+//				}else{
+//					return sum(n - 1) + sum(n - 2);
+//				}
+//			}
+//			for(let i = 1;i <= 20;i++){
+//				document.write(sum(i) + ' ');
+//			}
+			 var hb;
+            var hudu = Math.PI / 6;
+            var ksid =0;
+            var jsid =0;
+            var jiansid=0;
+            var time = 5;
+            var color = ["#000000", "#FFFF00", "#FF00FF", "#00FF00", "#802A2A",
+                "#00FFFF", "#082E54", "#C76114", "#0000FF", "#8A2BE2", "#03A89E", "#9C661F"
+            ];
+//          var color = ["#03A89E", "#03A89E", "#03A89E", "#03A89E", "#03A89E",
+//              "#03A89E", "#03A89E", "#03A89E", "#03A89E", "#03A89E", "#03A89E", "#03A89E"
+//          ];
+            var jiangxiang = ["罚酒一杯", "谢谢参与", "罚红包10块", "和女生对望10秒", "锤胸口", 
+                "谢谢参与", "交杯酒", "和团支书喝酒", "回答一个问题","再转一次", "爆照一张", "和班长喝酒"
+            ];
+			window.onload = function() {
+                var mycanvas = document.getElementById("mycanvas");
+                mycanvas.width = 370;
+                mycanvas.height = 370;
+                hb = mycanvas.getContext("2d");
+                //画12个扇形
+                for(var i = 0; i < 12; i++) {
+                    hb.beginPath();
+                    hb.moveTo(185, 185);
+                    hb.arc(185, 185, 150, i * Math.PI / 6, (i + 1) * Math.PI / 6);
+                    hb.fillStyle = color[i];
+                    hb.fill();
+                }
+                //红色旋转扇形
+                hb.beginPath();
+                hb.moveTo(185, 185);
+                hb.arc(185, 185, 150, 0, Math.PI / 6);
+                hb.fillStyle = "red";
+                hb.fill();
+                //              画12个奖项
+                hb.save();
+                hb.translate(185, 185);
+                for(var i = 0; i < 12; i++) {
+                    hb.beginPath();
+                    hb.font = "20px 微软雅黑";
+                    hb.fillStyle = "white";
+                    hb.rotate(Math.PI / 6);
+                    hb.fillText(jiangxiang[i], 100,40);
+                    hb.fill();
+
+                }
+                hb.restore();
+
+                //GO圆
+//              hb.beginPath();
+//              hb.arc(300, 300, 40, 0, 2 * Math.PI);
+//              hb.fillStyle = "brown";
+//              hb.fill();
+//              hb.beginPath();
+//              hb.fillStyle = "red";
+//              hb.font = "30px 微软雅黑";
+//              hb.fillText("GO", 277, 310);
+//              hb.fill();
+
+           	}
+			function start() {
+                ksid=setInterval(function() {
+                    yuanpan();
+                }, time);
+                console.log(time+":"+ksid)
+            }
+			//画圆盘
+            function yuanpan() {
+                hb.clearRect(0, 0, 600, 600);
+                //画12个扇形
+                for(var i = 0; i < 12; i++) {
+                    hb.beginPath();
+                    hb.moveTo(300, 300);
+                    hb.arc(300, 300, 250, i * Math.PI / 6, (i + 1) * Math.PI / 6);
+                    hb.fillStyle = color[i];
+                    hb.fill();
+                }
+                //黑色扇形旋转
+                hb.save();
+                hb.translate(300, 300);
+                hb.beginPath();
+                hb.rotate(hudu);
+                hb.moveTo(0, 0);
+                hb.arc(0, 0, 250, 0, Math.PI / 6);
+                hb.fillStyle = "red";
+                hb.fill();
+                hudu += Math.PI / 6;
+                hb.restore();
+                //画12个奖项
+                hb.save();
+                hb.translate(300, 300);
+                for(var i = 0; i < 12; i++) {
+                    hb.beginPath();
+                    hb.font = "20px 微软雅黑";
+                    hb.fillStyle = "white";
+                    hb.rotate(Math.PI / 6);
+                    hb.fillText(jiangxiang[i], 100, 40);
+                    hb.fill();
+                }
+                hb.restore();
+                //画圆GO
+                hb.beginPath();
+                hb.arc(300, 300, 40, 0, 2 * Math.PI);
+                hb.fillStyle = "brown";
+                hb.fill();
+                hb.beginPath();
+                hb.fillStyle = "red";
+                hb.font = "30px 微软雅黑";
+                hb.fillText("GO", 277, 310);
+                hb.fill();
+            }
+
+            function random(){
+                var ran1=parseInt(Math.random()*10000%17)+1;
+                var ran2=parseInt(Math.random()*10000%15)+17;
+                console.log(ran1+":"+ran2)
+                document.getElementById("ran1").value="男生："+ran1+"号";
+                document.getElementById("ran2").value="女生："+ran2+"号";
+            }
+		</script>
+	</body>
+</html>

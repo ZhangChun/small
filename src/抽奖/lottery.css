@@ -1,0 +1,336 @@
+.fixed-top-banner{
+	position: fixed !important;
+	display: none;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	min-height:568px;
+	background-color: black !important;
+}
+.fixed-bottom{
+	display: none;
+}
+.lotterypage{
+	padding: 0 !important;
+}
+.imgBox{background-image: url("") !important;}
+.imgBoxContent{
+	background-size: contain !important;background-repeat: no-repeat;box-shadow: 0 0 0 rgba(0,0,0,0) !important;
+    width: 76% !important;
+    height: 75% !important;
+    left: 12% !important;
+}
+.lotterypage {width: 100%;height: 100%;padding:60px 0 45px;}
+.container{width: 100%;height: 100%;position: relative;}
+.lotteryContainer{
+	width: 100%;height: 100%;position: absolute;top:0;left:0;
+	min-height:568px;
+	/*background-image:url(../../images/lotteryBigBg.png);*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.bgs{
+	width: 100%;
+    height: 100%;
+}
+.blurContainer{filter: blur(10px);}
+.blurBg{width: 100%;height: 100%;position: relative;background: rgba(0,0,0,0.72);z-index: 10;overflow:hidden;display: none;}
+.closes{
+	position:absolute;
+	width:2rem;
+	height:2rem;
+	bottom:-20%;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 15;
+	display: none;
+}
+.lotteryInfo{
+	width: 80%;
+    height: 225px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* margin: -110px 0 0 -100px; */
+    z-index: 10;
+    display: none;
+    transform: translate(-50%,-55%);
+}
+.lotteryInfo h3{
+	/*height:30px;line-height:25px;background: #48B4B3;border: 2px solid #48B4B3;box-shadow: inset 0 0 2px 4px rgba(0,0,0,0.15);border-radius: 8px 8px 0 0;font-size: 12px;text-align: center;*/
+	position: absolute;
+    top: -14%;
+    left: 0;
+    z-index: 1;
+    text-align: center;
+}
+.pinfo{
+	position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+}
+.lotteryInfo>div{
+	position: relative;
+	height:100%;border:3px solid #f59529;
+	/*box-shadow: inset 0 0 2px 4px rgba(0,0,0,0.20);*/
+	border-radius: 8px;
+	font-size: 0.9rem;overflow: scroll;line-height: 20px;padding: 15px;
+	
+}
+.prizes{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 15;
+    width: 80%;
+    height: 50%;
+    transform: translate(-50%,-55%);
+    background-image: url(../../images/prizeBg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+	display: none;
+}
+.pClose{
+	position:absolute;
+	width:2rem;
+	height:2rem;
+	bottom:0;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 15;
+	display: none;
+}
+.prizeInfo{
+	color:#ff7d1e;
+	text-align: center;
+	width:70%;
+	position: absolute;
+	left:15%;
+	bottom: 22%;
+	font-weight: bold;
+	text-shadow:#fff 1px 0 0,#fff 0 1px 0,#fff -1px 0 0,#fff 0 -1px 0;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	overflow:hidden;
+}
+.ptitle{
+	color:#ff7d1e;
+	text-align: center;
+	width:70%;
+	position: absolute;
+	left:15%;
+	bottom: 32%;
+	font-size: 1.1rem;
+	font-weight: bold;
+	text-shadow:#fff 1px 0 0,#fff 0 1px 0,#fff -1px 0 0,#fff 0 -1px 0;
+}
+
+.catPrize{
+	width:60%;
+	height:40px;
+	position: absolute;
+	left:50%;
+	bottom:5%;
+	transform: translateX(-50%);
+	border-radius: 8px;
+    background-image: url(../../images/catPrize.png);
+    background-size: 100% 100%;
+    text-align: center;
+    line-height: 40px;
+    color: #FFF;
+    font-size:1.1rem;
+}
+.area{
+	background-color: #fff;
+	resize: none;
+	color:black !important;
+	padding-top: 5px;
+	width:100%;
+	height:100%;
+	border:none;
+	font-size: 0.9rem;
+	overflow: auto;
+}
+
+/*.lotteryInfo ul{margin-left: 20px;}*/
+.lotteryBox{
+	/*width:284px;height:284px;background-image:url(../../images/lotteryBg.png);background-size: cover;position: absolute;top: 55%;left: 50%;margin: -200px 0 0 -142px;z-index: 1;*/
+	width: 16.7rem;
+    height: 16.7rem;
+    background-image: url(../../img/lotteryBg.png);
+    background-size: cover;
+    position: absolute;
+    top: 10.6rem;
+    left: 50%;
+    /*margin: -200px 0 0 -142px;*/
+    /*margin-top: -53%;*/
+    transform: translateX(-50%);
+    z-index: 1;
+	}
+.lotteryPointer{
+	/*width:69px;height:86px;*/
+	width:3.5rem;height:4.5rem;
+	background-image:url(../../img/lotteryPointer.png);background-size: 3.5rem 4.5rem;position: absolute;top: 50%;left: 50%;
+	margin: -43px 0 0 -27.5px;
+	z-index: 200;;transform-origin:50% 60%;cursor: pointer;
+	/*transform: rotate(-2deg);*/
+	
+	}
+.animation{-webkit-transform-origin:50% 47%;animation:myRotate 6s;-webkit-animation:myRotate 6s;animation-fill-mode:forwards;-webkit-animation-fill-mode:forwards;transform-origin:50% 60%;}
+.prize{width: 90px;height: 118px;position: absolute;top: 50%;left: 50%;margin: -120px 0 0 -45px;text-align: center;}
+.prize li{
+	width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 10%;
+    left: 6%;
+    -webkit-transform-origin:50% 100%;transform-origin:50% 100%;
+	}
+.prize li:nth-child(1){transform: rotate(22.5deg);}
+.prize li:nth-child(2){transform: rotate(67.5deg);}
+.prize li:nth-child(3){transform: rotate(112.5deg);}
+.prize li:nth-child(4){transform: rotate(157.5deg);}
+.prize li:nth-child(5){transform: rotate(202.5deg);}
+.prize li:nth-child(6){transform: rotate(247.5deg);}
+.prize li:nth-child(7){transform: rotate(292.5deg);}
+.prize li:nth-child(8){transform: rotate(337.5deg);}
+.prize .imgBox{width: 50%;margin: 10px auto}
+.not_prize{
+	/*width: 60%;*/
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+    transform: translate(-50%,-50%);
+    background: black;
+    opacity: 0.8;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    padding: 10px 15px;
+    display: none;
+}
+.tuoyuan{
+	position: relative;
+    top: 85%;
+}
+.tuoyuan img{
+	width: 100%;height: 3rem;
+}
+.lotteryWinBox{height:3.5rem;background: #fff;box-shadow: inset 2px 2px 2px 1px rgba(0,0,0,0.20);position: absolute;margin: 0 22px;bottom: -130px;left: -50px;right: -50px;overflow: hidden;}
+.lotteryWinContent{position: relative;font-size: 12px;line-height: 17px;}
+.lotteryWinContent .lotteryUser{position: absolute;top: 0;left: 45.5px;}
+.animation2{animation:myMove 10s infinite;-webkit-animation:myMove 10s infinite;animation-timing-function:linear}
+.lotteryWinContent .title{position: absolute;top: 5px;left: 5px;}
+.lotteryWinContent span{margin: 0 8px;}
+.ellipsis{
+	padding-top: 5px;
+    font-size: 0.8rem;
+}
+.inline{
+	display: inline-block;
+	width: 45px !important;
+	text-align: center;
+}
+.lotteryRule{
+	/*width:79px;height:25px;position: absolute;bottom: -40px;left: -30px;background-image: url(../../images/lotteryRule.png);background-size: cover;z-index: 1;*/
+	/*border-bottom:1px solid black;*/
+	font-weight: bold;
+	font-size: 0.8rem;
+	position: absolute;
+	bottom: 5%;
+    left: 5%;
+    padding: 6px;
+}
+.lotteryRecording{
+	/*width:79px;height:25px;position: absolute;bottom: -70px;left: -30px;background-image: url(../../images/myLotteryRecording.png);background-size: cover;z-index: 1;*/
+	/*border-bottom:1px solid black;*/
+	font-weight: bold;
+	font-size: 0.8rem;
+	position: absolute;
+	bottom: 5%;
+    right: 5%;
+    padding: 6px;
+}
+.lotteryNum{
+	width: 100%;position: absolute;bottom: -55px;left:0;right:0;font-size: 15px;color: black;text-align: center;
+	background: #fff;
+    border-radius: 30px;
+    font-size: 1rem;
+    padding: 5px;
+}
+.lotteryNum span{color:red;}
+.lotteryBg1{
+	width: 175px;
+    height: 90px;
+    position: absolute;
+    top: -85px;
+    left: 50%;
+    right: 0;
+    transform: translateX(-50%);
+}
+@media screen and (min-height: 736px) {
+	.lotteryBox {
+	    top: 15.6rem;
+	}
+}
+@media screen and (max-height: 640px) {
+	.lotteryBox {
+	    top: 8rem;
+	}
+}
+/*当屏幕尺寸小于600px时，应用下面的CSS样式*/
+@media screen and (max-width: 359px) { 
+  .lotteryBox {
+	    width: 240px;
+	    height: 240px;
+	    background-image: url(../../images/lotteryBg.png);
+	    background-size: cover;
+	    position: absolute;
+	    top: 60%;
+	    left: 50%;
+	    /*margin: -200px 0 0 -120px;*/
+	   margin-top: -200px;
+	   transform: translateX(-50%);
+	    z-index: 1;
+	}
+	.tuoyuan img{
+		width: 100%;height: 50px;
+	}
+	.lotteryRule {
+	    font-size: 0.8rem;
+	    bottom: 3px;
+	    left: 13px;
+	}
+	.lotteryRecording {
+	    font-size: 0.8rem;
+	    bottom: 3px;
+	    right: 16px;
+	}
+	.lotteryNum {
+	    bottom: -55px;
+	    font-size: 1rem;
+	}
+	.lotteryWinBox {
+	    bottom: -128px;
+	    height:60px;
+	}
+	.prize li {
+	    width: 80%;
+	    height: 80%;
+	    position: absolute;
+	    top: 25px;
+	    left: 10px;
+	    -webkit-transform-origin: 50% 100%;
+	    transform-origin: 50% 100%;
+	}
+}
+.lotteryBg2{width:87px;height:131px;position: absolute;bottom: -90px;right: -30px;}
+.lotteryBg3{width:32px;height:35px;position: absolute;bottom: -20px;left: -25px;}]
+
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<pre>
+			1.双击缩放；
+
+			2.双指手势缩放。
+			在iOS 10以前，iOS和Android都可以通过一行meta标签来禁止页面缩放
+			<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+			
+			但iOS 10开始，meta设置在Safari内无效了。
+			
+			在iOS里有一组双指手势操作的事件：gesturestart、gesturechange、gestureend
+			
+			
+		      window.onload=function () {
+		        document.addEventListener('touchstart',function (event) {
+		          if(event.touches.length>1){
+		            event.preventDefault();
+		          }
+		        });
+		        var lastTouchEnd=0;
+		        document.addEventListener('touchend',function (event) {
+		          var now=(new Date()).getTime();
+		          if(now-lastTouchEnd<=300){
+		            event.preventDefault();
+		          }
+		          lastTouchEnd=now;
+		        },false);
+		        document.addEventListener('gesturestart', function (event) {
+		          event.preventDefault();
+		        });
+		      }
+		    </script>
+		</pre>
+	</body>
+</html>

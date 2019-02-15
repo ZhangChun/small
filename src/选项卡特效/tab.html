@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>选项卡特效</title>
+		<style>
+			ul{
+				/*overflow: hidden;*/
+				
+			}
+			ul li{
+				list-style: none;
+				float: left;
+				padding: 10px;
+				cursor:pointer;
+				position: relative;
+			}
+			li::before {
+			  content: "";
+	          position: absolute;
+	          top: 0;
+	          left: 100%;
+	          width: 0%;
+	          height: 100%;
+	          border-bottom: 2px solid #4C7C9C;
+	          transition: 0.2s all linear;
+	          z-index:-1;
+			}
+			li:hover::before{
+				left: 0;
+				width: 100%;
+			}
+			li:hover ~ li::before {
+	          left: 0;
+        	}   
+		</style>
+	</head>
+	<body>
+		<ul>
+		  <li>不可思议的CSS</li>
+		  <li>导航栏</li>
+		  <li>光标小下划线跟随</li>
+		  <li>PURE CSS</li>
+		  <li>Nav Underline</li>
+		</ul>
+	</body>
+</html>

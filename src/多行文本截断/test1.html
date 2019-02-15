@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>多行文本截断 </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<style>
+			.d1{
+				display: -webkit-box;
+				overflow: hidden;
+				-webkit-line-clamp: 3;
+				-webkit-box-orient: vertical;
+			}
+			.d2{
+				position:relative;
+				line-height:18px;
+    			height: 36px;
+    			overflow: hidden;
+			}
+			.d2::after{
+				content : '...';
+				font-weight: bold;
+				position: ababsolute;
+				bottom: 0;
+				right: 0;
+				padding: 0 20px 1px 45px;
+				background: -webkit-gradient(linear,left top,right top,from(rgba(255,255, 255, 0)),to(white),color-stop(50%,white));
+				background : linear-gradient(to right,rgba(255,255,255),white 50%,white)
+			}
+		</style>
+	</head>
+	<body>
+		<h3>多行文本截断 不支持-Firefox, IE</h3>
+		<div class="d1">
+			多行文本截断 就是通过 -webkit-line-clamp 属性实现 它的优点有： 响应式截断，根据不同宽度做出调整。文本超出范围才显示省略号，否则不显示省略号。
+			但是：  Firefox, IE 浏览器统统都不支持这个属性，浏览器兼容性不好。
+		</div>
+		<br /><br /><br />
+		<h3>定位元素实现多行文本截断文本截断 支持-Firefox, IE</h3>
+		<div class="d2">
+			多行文本截断 就是通过 -webkit-line-clamp 属性实现 它的优点有： 响应式截断，根据不同宽度做出调整。文本超出范围才显示省略号，否则不显示省略号。
+			但是：  Firefox, IE 浏览器统统都不支持这个属性，浏览器兼容性不好。
+		</div>
+	</body>
+</html>

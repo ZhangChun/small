@@ -4,15 +4,32 @@
 		<meta charset="UTF-8">
 		<title>jquery</title>
 		<script src="../js/jquery-2.2.1.js"></script>
+		<style>
+			.block{
+				position: absolute;
+				top: 100px;
+				left:400px;
+				width: 100px;
+				height: 100px;
+				background: #ddd;
+			}
+		</style>
 	</head>
 	<body>
-		<script type="text/javascript">
-			var join = ['123','456','abc'];
-			console.log(join)
-			console.log(join.join());
-			
-			var arr = ['1','2','3','4','5'];
-			console.log(arr.splice(1,3))
-		</script>
+		<script src="https://gw.alipayobjects.com/as/g/h5-lib/alipayjsapi/3.1.1/alipayjsapi.inc.min.js"></script>
+
+<button id="J_btn" class="btn btn-default">支付</button>
+<script>
+  var btn = document.querySelector('#J_btn');
+  btn.addEventListener('click', function(){
+    ap.tradePay({
+      tradeNO: '201802282100100427058809844'
+    }, function(res){
+      ap.alert(res.resultCode);
+    });
+  });
+</script>
+
+
 	</body>
 </html>

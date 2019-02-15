@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>选项卡切换</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<style>
+			.tab{
+				padding: 0 20px;
+				background: #eee;
+				display: flex;
+			}
+			.tab .list{
+				font-size: 12px;
+				color: #333;
+				flex: 1;
+				text-align: center;
+				height: 60px;
+				line-height: 60px;
+				border-bottom: 1px solid #fff;
+			}
+			.tab .list i{
+				font-size: 25px;
+				color: #afafaf;
+				vertical-align: middle;
+			}
+			.tab-box .lists{display:none;}
+			.tab-box .lists:first-Child{display:block;} 
+			.active{
+				color: #c40d24 !important;
+				border-bottom: 2px solid #c40d24 !important;
+			}
+			.active i{
+				color: #c40d24 !important;
+			}
+			.lists{
+				width: 100%;
+				overflow: hidden;
+				padding: 0 2%;
+				background: #eee;
+				box-sizing: border-box;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="tab">
+				<div class="list active">
+					<i class="iconfont icon-xiaoyuan-"></i> 彩票
+				</div>
+				<div class="list">
+					<i class="iconfont icon-xiaoyuan-"></i> 电子
+				</div>
+				<div class="list">
+					<i class="iconfont icon-xiaoyuan-"></i> 真人/棋牌
+				</div>
+				<div class="list">
+					<i class="iconfont icon-xiaoyuan-"></i> 体育
+				</div>
+			</div>
+			<div class="tab-box">
+				<div class="lists">
+					选项1
+				</div>
+				<div class="lists">
+					选项2
+				</div>
+				<div class="lists">
+					选项3
+				</div>
+				<div class="lists">
+					选项4
+				</div>
+			</div>
+	</body>
+	<script src="../../js/jquery-2.2.1.js"></script>
+	<script>
+		$(document).ready(function(){
+			 $(".tab .list").click(function(){
+				//通过 .index()方法获取元素下标，从0开始，赋值给某个变量
+		        var _index = $(this).index();
+		        console.log("aaaaa",_index)
+			    //让内容框的第 _index 个显示出来，其他的被隐藏
+		        $(".tab-box>.lists").eq(_index).show().siblings().hide();
+			    //改变选中时候的选项框的样式，移除其他几个选项的样式
+		    	$(this).addClass("active").siblings().removeClass("active");
+			});
+		});
+	</script>
+</html>

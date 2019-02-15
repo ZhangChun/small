@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>清除浮动</title>
+		<script src="../js/jquery-2.2.1.js"></script>
+		<style>
+			.father{
+				width:600px;
+				border: 1px solid gray;
+				/*overflow: hidden;*/
+				/*overflow: auto;*/
+			}
+			.father:after{
+				content:'';
+				display: block; 
+				clear: both;
+			}
+			.d1{
+				width:300px;
+				height:300px;
+				background-color: #DDDDDD;
+				float: left;
+			}
+			.d2{
+				width:300px;
+				height:300px;
+				background-color: #EEEEEE;
+				float: left;
+			}
+			.clr{
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="father">
+			<div class="d1">
+				1、父元素.father添加 overflow: hidden;或 overflow: auto; 	<br/>		
+				2、在浮动元素最后添加一个带有 clear:both;属性的div <br/>
+				3、 :after 伪元素清除浮动
+			</div>
+			<div class="d2">左浮动</div>
+			<!--<div class="clr"></div>-->
+		</div>
+		
+	</body>
+</html>

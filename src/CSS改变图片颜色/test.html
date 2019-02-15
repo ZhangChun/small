@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.fl{
+				float: left;
+				margin: 30px;
+			}
+			.fl img{
+				width:500px;
+			}
+			.d1 img{
+				/*给图像一个高斯模糊效果，length值越大，图像越模糊*/
+				filter:blur(0px);
+				transition-duration: 1s;transition-property: all;
+				animation: name1 5s infinite;
+			}
+			@-webkit-keyframes name1{
+				0%{filter:blur(0px)}
+				25%{filter:blur(1px)}
+				50%{filter:blur(2px)}
+				75%{filter:blur(1px)}
+				100%{filter:blur(0px)}
+			}
+			.d2 img{
+				/*filter:brightness(100%);*/
+				transition-duration: 1s;transition-property: all;
+				animation: name2 8s infinite;
+			}
+			@-webkit-keyframes name2{
+				0%{filter:brightness(1000%)}
+				/*50%{filter:brightness(1000%)}*/
+				100%{filter:brightness(100%)}
+			}
+			.d3 img{
+				filter:hue-rotate(0deg);
+				animation: name3 5s infinite;
+			}
+			@-webkit-keyframes name3{
+				to{filter:hue-rotate(0deg)}
+				from{filter:hue-rotate(500deg)}
+			}
+			.d4 img{
+				filter:invert(0%);
+				animation: name4 7s infinite;
+			}
+			@-webkit-keyframes name4{
+				to{filter:invert(100%)}
+				from{filter:invert(0%)}
+			}
+			.d5 img{
+				filter:grayscale(0%);
+				animation: name5 5s infinite;
+			}
+			@-webkit-keyframes name5{
+				to{filter:grayscale(100%)}
+				from{filter:grayscale(0%)}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="d1 fl"><img src="../../img/640.jpg" alt="" /></div>
+		<div class="d2 fl"><img src="../../img/img2.jpg" alt="" /></div>
+		<div class="d3 fl"><img src="../../img/img1.jpg" alt="" /></div>
+		<div class="d4 fl"><img src="../../img/xin1.jpg" alt="" /></div>
+		<div class="d5 fl"><img src="../../img/xin2.jpg" alt="" /></div>
+	</body>
+	<script>
+		//userAgent 属性是一个只读的字符串，声明了浏览器用于 HTTP 请求的用户代理头的值
+		var u = navigator.userAgent;
+		 
+		//Android终端
+		var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
+		 
+		//iOS终端
+		var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); 
+		 
+		if(isAndroid){
+		    //如果为Android
+		    console.log("当前设备是Android");
+		}
+		if(isiOS){
+		    //如果为iOS
+		    console.log("当前设备是iOs");
+		}
+
+	</script>
+</html>

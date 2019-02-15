@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var sHref = window.location.href;
+    		var args = sHref.split('?');
+    		console.log('sHrefffff',sHref)
+    		console.log('argssssss',args)
+//  		if(args[0] == sHref){
+//		        return "";
+//		    }
+    		var arr = args[1].split('&');
+    		var obj = {}
+    		console.log("arrrrrrrr",arr)
+    		for(let i=0;i<arr.length;i++){
+    			var arg = arr[i].split('=');
+    			console.log('arggggggggggggg',arg)
+    			obj[arg[0]] = arg[1];
+    		}
+    		console.log("OBJJJJJJJJJJJJ",obj)
+		</script>
+	</body>
+</html>
+   
