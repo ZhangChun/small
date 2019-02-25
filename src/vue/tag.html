@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>VUE</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			添加任务
+			<input type="text" v-on:keyup="addTodo"/> <br />
+			任务列表
+			<div v-for="(item,key) in lists" :key="key">
+				{{item.value}}
+			</div>
+		</div>
+		
+		
+		<script>
+			new Vue({
+				el: '#app',
+				data:{
+					lists:[]
+				},
+				methods:{
+					addTodo:function(e){
+						if(e.key == 'Enter'){
+							console.log(this.lists)
+							this.lists.push({
+								value: e.target.value
+							})
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
