@@ -12,8 +12,8 @@
 	position: relative;
 	margin: 1em auto;
 	padding: 0;
-	width: 32em;
-  height: 32em;
+	width: 300px;
+  height: 300px;
 	border-radius: 50%;
 	list-style: none;
   overflow: hidden;
@@ -67,13 +67,59 @@
   transform: rotate(-360deg) skewY(-54deg);
   background: #00FFCC;
 }
+ .d1{
+ 	width:30px;height:30px;
+ 	background: #fff;
+ }
  
+ .dd{
+    width: 90px;
+    height: 118px;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    margin: -120px 0 0 -45px;
+    text-align: center;
+ }
+ .dd div {
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 10%;
+    left: 6%;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+	}
+	.dd div:nth-child(1) {
+    transform: rotate(22.5deg);
+	}
+	.dd div:nth-child(2) {
+    transform: rotate(67.5deg);
+	}
+	.dd div:nth-child(3) {
+    transform: rotate(112.5deg);
+	}
+	.dd div:nth-child(4) {
+    transform: rotate(157.5deg);
+	}
+	.dd div:nth-child(5) {
+    transform: rotate(202.5deg);
+	}
+	.dd div:nth-child(6) {
+    transform: rotate(247.5deg);
+	}
+	.dd div:nth-child(7) {
+    transform: rotate(292.5deg);
+	}
+	.dd div:nth-child(8) {
+    transform: rotate(337.5deg);
+	}
   </style>
 </head>
 <body>
  
 <ul class='pie'>
-    <li class='slice-1 slice'> </li> 
+    <li class='slice-1 slice'>  </li> 
     <li class='slice-2 slice'> </li>
     <li class='slice-3 slice'> </li>
     <li class='slice-4 slice'> </li>
@@ -83,6 +129,16 @@
     <li class='slice-8 slice'> </li>
     <li class='slice-9 slice'> </li>
     <li class='slice-10 slice'> </li>
-  <ul>
+  </ul>
+  	<div class="dd">
+  		<div>1</div>
+  		<div>2</div>
+  		<div>3</div>
+  		<div>4</div>
+  		<div>5</div>
+  		<div>6</div>
+  		<div>7</div>
+  		<div>8</div>
+  	</div>
 </body>
 </html>

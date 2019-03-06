@@ -3,9 +3,9 @@ $(function() {
 	var rad = 0,
 	oldRad = 0,
 	index = 0;
-
 	$(".lotteryPointer")[0].addEventListener("webkitAnimationEnd", function() {
 		oldRad = rad % 360;
+		console.log("oldRaddddd",oldRad)
 		$(".lotteryPointer").removeClass("animation")
 		$(".lotteryPointer").css({
 			"transform": "rotate(" + oldRad + "deg)"
