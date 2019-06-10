@@ -3,10 +3,26 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<style>
+			.active{
+				color: red;
+			}
+		</style>
 	</head>
 	<body>
+		<ul class="ul">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<script src="../../js/jquery-2.2.1.js"></script>
 		<script>
 			var sHref = window.location.href;
+			if(sHref.indexOf('?') < 0){
+				console.log("????")
+			}
     		var args = sHref.split('?');
     		console.log('sHrefffff',sHref)
     		console.log('argssssss',args)
@@ -22,6 +38,11 @@
     			obj[arg[0]] = arg[1];
     		}
     		console.log("OBJJJJJJJJJJJJ",obj)
+//  		if(obj.industry_category){
+//  			console.log("aaaaaa")
+//  			$(".ul").find('li').eq(obj.industry_category).addClass('active')
+//  		}
+    		
 		</script>
 	</body>
 </html>

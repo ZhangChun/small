@@ -5,41 +5,27 @@
 		<title>多行文本截断 </title>
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
 		<style>
-			.d1{
-				display: -webkit-box;
-				overflow: hidden;
-				-webkit-line-clamp: 3;
-				-webkit-box-orient: vertical;
+			p{
+				width: 180px;
+			    position: relative;
+			    line-height: 2em;
+			    height: 8em;
+			    overflow: hidden
 			}
-			.d2{
-				position:relative;
-				line-height:18px;
-    			height: 36px;
-    			overflow: hidden;
-			}
-			.d2::after{
-				content : '...';
-				font-weight: bold;
-				position: ababsolute;
-				bottom: 0;
-				right: 0;
-				padding: 0 20px 1px 45px;
-				background: -webkit-gradient(linear,left top,right top,from(rgba(255,255, 255, 0)),to(white),color-stop(50%,white));
-				background : linear-gradient(to right,rgba(255,255,255),white 50%,white)
+			p::after{
+				content: "...";
+			    font-weight: bold;
+			    position: absolute;
+			    bottom: 0;
+			    right: 0;
+			    padding: 0 20px 1px 45px;
+			    background: url(./img/ellipsis_bg.png) repeat-y;
 			}
 		</style>
 	</head>
 	<body>
-		<h3>多行文本截断 不支持-Firefox, IE</h3>
-		<div class="d1">
-			多行文本截断 就是通过 -webkit-line-clamp 属性实现 它的优点有： 响应式截断，根据不同宽度做出调整。文本超出范围才显示省略号，否则不显示省略号。
-			但是：  Firefox, IE 浏览器统统都不支持这个属性，浏览器兼容性不好。
-		</div>
-		<br /><br /><br />
-		<h3>定位元素实现多行文本截断文本截断 支持-Firefox, IE</h3>
-		<div class="d2">
-			多行文本截断 就是通过 -webkit-line-clamp 属性实现 它的优点有： 响应式截断，根据不同宽度做出调整。文本超出范围才显示省略号，否则不显示省略号。
-			但是：  Firefox, IE 浏览器统统都不支持这个属性，浏览器兼容性不好。
-		</div>
+		<p>
+			1.策划上，这款h5是江小白酒业为宣传本企业所打造的一个宣传h5。这款h5通过用户选取与之PK的角色，然后进行与角色之间关于谁扑克大小的游戏，这是一款比较眼力的游戏，先亮出所有扑克的正面，然后全部打混，让用户抽牌与其进行比较大小，赢了便可以获得相应的福利奖品。  2.设计上，这款h5是一款动画与游戏相结合的h5，因为这是一款宣传酒业公司的，而且酒与牌往往是不分家的，设计者将比扑克大小的游戏添加其中，更会创造一种意境，再以游戏附加上江小白语录，让更多的用户对江小白三个字感兴趣，继而宣传了本公司。  3.技术
+		</p>
 	</body>
 </html>
