@@ -13,7 +13,7 @@ $(function() {
 	})
 	$(".pageBox").on("click", ".lotteryPointer", function() {
 		$(".lotteryPointer").addClass("animation");
-		index = 0;
+		index = 1;
 		console.log(oldRad, index)
 		rad = index * 45 + 360 * 10 + 22.5;
 		console.log("raddddddddddddd",rad)

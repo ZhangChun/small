@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>flex布局</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+		<style>
+			.flex-direction{
+				display: flex;
+				width: 100%;
+			}
+			.flex-direction div{
+				width: 100px;
+				height: 100px;
+				border: 1px solid #ddd;
+				/*flex-direction: column;*/
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<h3>flex-direction属性</h3>
+			<div class="flex-direction">
+				<div v-for="i in (5)">
+					111
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			new Vue({
+				el: '#app',
+				data:{
+				},
+				methods:{
+					
+				}
+			})
+		</script>
+	</body>
+</html>
