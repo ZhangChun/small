@@ -1,0 +1,11 @@
+<!--pages/loading/loading.wxml-->
+<scroll-view class="container">
+   <view class="box">
+      <view class="box1">欢迎进入</view>
+      <view class="box1">广东佛山赛场</view>
+      <view id="canvas">
+         80%
+      </view>
+   </view>
+   
+</scroll-view>

@@ -1,0 +1,44 @@
+{
+  "pages":[
+     "pages/test/test",
+    "pages/index/index",
+    "pages/personal/personal",
+    "pages/result/result",
+    "pages/answer/answer",
+    "pages/loading/loading",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "color": "#000",
+    "selectedColor": "#58e18c",
+    "backgroundColor": "#eee",
+    "borderStyle":"white",
+    "list":[
+      {
+        "selectedIconPath": "pages/images/shouye_1.png",
+        "iconPath": "pages/images/shouye.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "pages/images/xiaoxi.png",
+        "iconPath": "pages/images/dkw_xiaoxi.png",
+        "pagePath": "pages/index/index",
+        "text": "消息"
+      },
+      {
+        "selectedIconPath": "pages/images/yonghu.png",
+        "iconPath": "pages/images/icon-user.png",
+        "pagePath": "pages/logs/logs",
+        "text": "用户"
+      }
+    ]
+    
+  }
+}

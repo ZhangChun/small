@@ -1,0 +1,70 @@
+<!--pages/personal/personal.wxml-->
+<scroll-view class="container">
+   <image class="banyuan" mode="widthFix" src="../images/banyuan1.png"></image>
+   <view class="juxing1">
+      <!-- <image class="juxing" mode="widthFix" src="../images/juxing1.png"></image> -->
+      <view class="box">
+         <view class="avatar">
+            <image mode="widthFix" src="../images/userImg.png"></image>
+         </view>
+         <view class="nickname">
+            <view>输入用户的昵称</view>
+            <view>
+               <image mode="widthFix" src="../../assets/images/x1.png"></image>
+            </view>
+         </view>
+      </view>
+   </view>
+   <view class="juxing6">
+      <view class="flex">
+         <view class="flex1">
+            答题次数
+         </view>
+         <view class="flex1">
+            10次
+         </view>
+      </view>
+      <view class="flex">
+         <view class="flex1">
+            本月最高分
+         </view>
+         <view class="flex1">
+            100分
+         </view>
+      </view>
+      <view class="flex">
+         <view class="flex1">
+            最近一次得分
+         </view>
+         <view class="flex1">
+            90分
+         </view>
+      </view>
+      <view class="flex">
+         <view class="flex1">
+            分享次数
+         </view>
+         <view class="flex1">
+            10次
+         </view>
+      </view>
+      <view class="flex">
+         <view class="flex1">
+            抽奖次数
+         </view>
+         <view class="flex1">
+            10次
+         </view>
+      </view>
+   </view>
+   <view class='juxing7'>
+      <view class="list">
+         <view class="li1">我的奖品</view>
+         <view class="li2"><image mode="widthFix" src="../../assets/images/right.png"></image></view>
+      </view>
+      <view class="list">
+         <view class="li1">意见反馈</view>
+         <view class="li2"><image mode="widthFix" src="../../assets/images/right.png"></image></view>
+      </view>
+   </view>
+</scroll-view>

@@ -1,0 +1,51 @@
+<!--pages/result/result.wxml-->
+<scroll-view class="container">
+   <image class="banyuan" mode="widthFix" src="../images/banyuan1.png"></image>
+   <view class="juxing1">
+      <!-- <image class="juxing" mode="widthFix" src="../images/juxing1.png"></image> -->
+      <view class="box">
+         <view class="avatar">
+            <image mode="widthFix" src="../images/userImg.png"></image>
+         </view>
+         <view class="nickname">
+            <view>输入用户的昵称</view>
+            <view>Lv.3</view>
+         </view>
+      </view>
+   </view>
+   <view class="juxing8">
+      <view class="score">
+         8分
+      </view>
+      <view class="answer_score">
+         答题分数：8分
+      </view>
+      <view class="winning">
+         <view class="content">恭喜您得中保健知识状元</view>
+         <view class="fangpian">
+            您的防骗级别：
+         </view>
+         <view class="xing">
+            <image mode="widthFix" src="../../assets/images/xing.png"></image>
+            <image mode="widthFix" src="../../assets/images/xing.png"></image>
+            <image mode="widthFix" src="../../assets/images/xing.png"></image>
+            <image mode="widthFix" src="../../assets/images/xing.png"></image>
+            <image mode="widthFix" src="../../assets/images/xing.png"></image>
+         </view>
+      </view>
+      <view class="j1">
+         您本次答题用时1分30秒
+      </view>
+      <view class="j1">
+         打败了全国70%的用户
+      </view>
+      <view class="flex">
+         <view class="flex1">本月答题次数：2</view>
+         <view class="flex1">本月答题最高分：10分</view>
+      </view>
+   </view>
+   <view class="footer">
+      <view class="f1"><image mode="widthFix" src="../../assets/images/end_1.png"></image></view>
+      <view class="f1"><image mode="widthFix" src="../../assets/images/end_2.png"></image></view>
+   </view>
+</scroll-view>

@@ -1,0 +1,62 @@
+<!--index.wxml-->
+<scroll-view class="container {{alert==1?'':alert==2?'':'isScroll'}}">
+   <image class="banyuan" mode="widthFix" src="../images/banyuan1.png"></image>
+   <view class="juxing1">
+      <!-- <image class="juxing" mode="widthFix" src="../images/juxing1.png"></image> -->
+      <view class="box">
+         <view class="avatar">
+            <image mode="widthFix" src="../images/userImg.png"></image>
+         </view>
+         <view class="nickname">
+            <view>输入用户的昵称</view>
+            <view>Lv.3</view>
+         </view>
+      </view>
+   </view>
+   <view class="juxing2">
+      <!-- <image class="juxing" mode="widthFix" src="../images/juxing2.png"></image> -->
+      <image class="btn1" mode="widthFix" src="../images/btn1.png"></image>
+   </view>
+   <view class="juxing3">
+      <!-- <image class="juxing" mode="widthFix" src="../images/juxing3.png"></image> -->
+      <image class="btn1" mode="widthFix" src="../images/btn2.png"></image>
+   </view>
+   <view class="juxing4">
+      <!-- 群组管理 -->
+      <view class="box1">
+         <image class="btn1" mode="widthFix" src="../images/btn3.png" catchtap='group'></image>
+      </view>
+      <!-- 个人中心 -->
+      <view class="box2">
+         <image class="btn1" mode="widthFix" src="../images/btn4.png"></image>
+      </view>
+   </view>
+   <!-- 遮罩层 活动规则 -->
+   <view class="zhe {{alert==1?'isShow':alert==2?'isShow':'isHide'}}"></view>
+   <view class="rules {{alert==1?'isShow':'isHide'}}">
+      <view class="r1">
+         <image class="img1" mode="widthFix" src="../images/pop_2.png"></image>
+         <image class="img2" mode="widthFix" src="../images/pop_3.png"></image>
+      </view>
+      <view class="start">
+         <image mode="widthFix" src="../images/pop_1.png" catchtap='start'></image>
+      </view>
+   </view>
+   <view class="rules {{alert==2?'isShow':'isHide'}}">
+      <view class="r1">
+         <view class="title">赛场数据</view>
+         <view class="t1">
+            共<span>59000</span>人次参赛
+         </view>
+         <view class="t1">
+            已产生<span>68</span>名保健状元
+         </view>
+         <view class="t1">
+            最短用时<span>1分58秒</span>
+         </view>
+      </view>
+      <view class="start">
+         <image mode="widthFix" src="../images/pop2_1.png" catchtap='close'></image>
+      </view>
+   </view>
+</scroll-view>

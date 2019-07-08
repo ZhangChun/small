@@ -6,26 +6,54 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
 		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 		<style>
-			.flex-direction{
+			.align{
+				width: 300px;
+				height: 150px;
 				display: flex;
-				width: 100%;
-			}
-			.flex-direction div{
-				width: 100px;
-				height: 100px;
+				/***盒子里面的元素垂直居中显示***/
+				align-items: center;
+				/***盒子里面的元素水平居中显示***/
+				justify-content: center;    
+				/***盒子里面的元素右对齐显示***/
+				/*justify-content: flex-end;*/
 				border: 1px solid #ddd;
-				/*flex-direction: column;*/
-				
+			}
+			.align div{
+				width: 150px;
+				height: 50px;
+				/*margin: auto;*/
+				/*align-self: center;*/
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				/*display: flex;
+				align-content: center;*/
+				border: 1px solid #ddd;
+			}
+			.flex{
+				display: flex;
+			}
+			.left{
+				width: 100px;
+				background: #ddd;
+			}
+			.right{
+				flex: 1;
+				background: gray;
 			}
 		</style>
 	</head>
 	<body>
 		<div id="app">
-			<h3>flex-direction属性</h3>
-			<div class="flex-direction">
-				<div v-for="i in (5)">
-					111
+			<!--<h3>flex弹性盒子布局</h3>
+			<div class="align">
+				<div>
+					垂直水平居中
 				</div>
+			</div>-->
+			<div class="flex">
+				<div class="left">1</div>
+				<div class="right">2</div>
 			</div>
 		</div>
 		

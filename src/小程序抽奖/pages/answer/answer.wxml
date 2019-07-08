@@ -1,0 +1,36 @@
+<!--pages/answer/answer.wxml-->
+<scroll-view class="container">
+   <image class="banyuan" mode="widthFix" src="../images/banyuan1.png"></image>
+   <view class="juxing1">
+      <!-- <image class="juxing" mode="widthFix" src="../images/juxing1.png"></image> -->
+      <view class="box">
+         下列关于进口保健食品说法正确的是？
+      </view>
+   </view>
+   <view class="book">
+      <view class="height_70">
+   
+      </view>
+      <view class="books">
+         <view class="no_1">
+            可以在国内生产
+         </view>
+      </view>
+      <view class="books active">
+         <view class="no_1">
+            仅符合所在国（地区）的相关规定即可进口
+         </view>
+      </view>
+      <view class="books">
+         <view class="no_1">
+            应同时符合所在国（地区）和我国的相关规定
+         </view>
+      </view>
+      <view class="yes">
+         答题正确
+      </view>
+   </view>
+   <view class="next">
+      <image mode="widthFix" src="../../assets/images/next.png"></image>
+   </view>
+</scroll-view>

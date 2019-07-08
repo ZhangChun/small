@@ -1,0 +1,41 @@
+<view class="prize">
+  <view class="prize-top flex-bet wrap">
+    <view>我的V币：1000</view>
+    <view class="btn">我的奖品</view>
+  </view>  
+  <view class="prize-center" style="transform:rotate(-90deg);">
+    <view class="box">
+      <image src="../images/prize/prize_01.png"></image>
+      <view class="ul">
+      <view class="li {{curIndex == index ? 'cur' : ''}}" wx:for="{{prize}}" wx:key="{{item.id}}" style='transform:rotate({{item.deg}}deg)'><text style='transform:rotate({{curNumDeg * .5}}deg)'></text></view>
+      <!-- <view>{{item.name}}</view> -->
+    </view> 
+    <view class="needle" style='transform:rotate({{needleDeg}}deg)'><image src="../images/prize/prize_03.png"></image></view>
+    </view>
+  </view>
+  <view class="prize-bottom">
+    <view class="h3">我的抽奖次数(0/3)</view>
+    <view class="button" bindtap="start"><text wx:if="{{isPrize}}">抽奖</text><text wx:if="{{!isPrize}}">抽奖中...</text></view>
+    <view class="h4">第一次投票可以获得抽奖机会，<text>去投票吧！</text></view>
+  </view>
+  <view>
+    <view class="model model1" hidden="{{isPrizeOk}}">
+      <view class="box fadeShow">
+        <image src="../images/prize/prize_05.png" mode="widthFix"></image>
+        <view class="btn1 btn"></view>
+        <view class="btn2 btn" bindtap="exchange"></view>
+        <view class="btn3 btn" bindtap="closeModel"></view>
+      </view>
+    </view>
+    <view class="model model2" hidden="{{isPrizeOk2}}">
+      <view class="box fadeShow">
+        <image src="../images/prize/prize_04.png" mode="widthFix"></image>
+        <view class="btns flex-cen">
+          <view class="btn1 btn" bindtap="closeModel"></view>
+          <view class="btn2 btn"></view>
+        </view>
+        <view class="btn3 btn" bindtap="closeModel"></view>
+      </view>
+    </view>
+  </view>
+</view>

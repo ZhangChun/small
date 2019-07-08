@@ -1,0 +1,30 @@
+.wrap{max-width: 95%;}
+.flex-bet{display:flex;justify-content: space-between;align-items: center;}
+.flex-cen{display: flex;justify-content: center;align-items: center;}
+.prize-top{padding-top: 20rpx;font-size: 28rpx;color:#b30e12;}
+.prize-top .btn{height: 44rpx;line-height: 44rpx;text-align: center;padding:0 22rpx;border:1rpx solid #b30e12;border-radius: 44rpx;}
+.prize-center{padding-top: 36rpx;}
+.prize-center .box{width:744rpx;height:688rpx;position: relative;padding: 66rpx 0 0 96rpx;box-sizing: border-box;}
+.prize-center .box>image{width:100%;position: absolute;height:100%;z-index: 1;left:0;top:0;}
+.prize-center .ul{width:552rpx;height:552rpx;border-radius: 50%;position: relative;z-index: 5;opacity: 0;}
+.prize-center .ul .li{width:300rpx;border-top:1rpx solid #666;position: absolute;left:50%;top:50%;transform-origin: left top;text-align: center;}
+.prize-center .ul .li text{display: block;margin-top: 36rpx;}
+/* .prize-center .needle{width:220rpx;height:10rpx;background: red;position: absolute;left:50%;top:calc(50% - 5rpx);transform-origin: left center;transform: rotate(-90deg);transition: all 5s ease-in-out;z-index: 10;} */
+.prize-center .needle{width:225rpx;height:225rpx;border-radius: 50%;position: absolute;left:273rpx;top:232rpx;transition: all 5s ease-in-out;z-index: 10;transform-origin:center;}
+/* .prize-center .needle image{width:282rpx;height:225rpx;position: absolute;left:0rpx;top:0rpx;} */
+.prize-center .needle image{width:60rpx;height:47rpx;position: absolute;left:99%;top:50%;transform: translateY(-50%);}
+.prize-bottom{padding-top: 30rpx;text-align: center;}
+.prize-bottom .h3{font-size:26rpx;color:#333;font-weight: bold;}
+.prize-bottom .button{width:400rpx;height: 60rpx;line-height: 60rpx;border-radius: 60rpx;background: #E53D3D;font-size: 30rpx;color:#fff;margin:57rpx auto 22rpx;}
+.prize-bottom .h4{font-size: 22rpx;color:#747474;text-decoration: underline;}
+.prize-bottom .h4 text{color:#;}
+.model{position: fixed;width:100%;height:100%;background: rgba(0,0,0,.7);left:0;top:0;z-index: 100;text-align: center;}
+.model .box{margin-top:144rpx;position: relative;}
+.model1 image{width:676rpx;}
+.model1 .btn,.model2 .btns,.model2 .btn3{transform: translateX(-50%);}
+.model1 .btn,.model2 .btn3{width:305rpx;height:64rpx;position: absolute;left:50%;top:423rpx;}
+.model1 .btn2{top:495rpx;}
+.model1 .btn3,.model2 .btn3{height:80rpx;top:680rpx;}
+.model2 .btn3{top:670rpx;}
+.model2 .btns{position: absolute;left:50%;top:456rpx;}
+.model2 .btns .btn{width:218rpx;height:80rpx;margin:0 23rpx;}
