@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>制作小于1px的边框线</title>
+		<style>
+	        .scale {
+	            position: relative;
+	        }
+	
+	        .scale:after {
+	            content: "";
+	            position: absolute;
+	            bottom: 0;
+	            left: 0;
+	            right: 0;
+	            border-bottom: 1px solid #F50206;
+	            transform: scaleY(.2);/*将边框线沿着垂直方向缩小到0.3倍*/
+	            transform-origin: 0 bottom;/*因为是下边框线，所以沿着底部靠齐*/
+	        }
+	
+	        #div1 {
+	            width: 300px;
+	            height: 50px;
+	            margin: 200px auto;
+	            /*background: #26A04B;*/
+	           border: 1px solid #F50206;
+	           border-bottom: none;
+	        }
+	    </style>
+	</head>
+	<body>
+		<div id="div1" class="scale"></div>
+	</body>
+</html>

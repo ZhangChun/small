@@ -6,65 +6,66 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
 		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 		<style>
-			.align{
-				width: 300px;
-				height: 150px;
+			.rows{
 				display: flex;
-				/***盒子里面的元素垂直居中显示***/
-				align-items: center;
-				/***盒子里面的元素水平居中显示***/
-				justify-content: center;    
-				/***盒子里面的元素右对齐显示***/
-				/*justify-content: flex-end;*/
-				border: 1px solid #ddd;
-			}
-			.align div{
-				width: 150px;
-				height: 50px;
-				/*margin: auto;*/
-				/*align-self: center;*/
-				display: flex;
-				align-items: center;
 				justify-content: center;
-				/*display: flex;
-				align-content: center;*/
-				border: 1px solid #ddd;
 			}
-			.flex{
-				display: flex;
+			.list .rows:first-child{
+				padding-top: 40px;
 			}
-			.left{
-				width: 100px;
-				background: #ddd;
+			.list .rows:nth-child(even){
+				flex-direction: row-reverse;
 			}
-			.right{
-				flex: 1;
-				background: gray;
+			.cols{
+				display: inline-block;
+				width: 40px;
+				text-align: center;
 			}
 		</style>
 	</head>
 	<body>
 		<div id="app">
-			<!--<h3>flex弹性盒子布局</h3>
-			<div class="align">
-				<div>
-					垂直水平居中
-				</div>
-			</div>-->
-			<div class="flex">
-				<div class="left">1</div>
-				<div class="right">2</div>
+			<div>
+				请输入行：<input type="number" v-model="rows"/>	
 			</div>
+			<div>
+				请输入列：<input type="number" v-model="cols"/>	
+			</div>
+			<button @click="comfrim()">确定</button>
+			<div class="list">
+				<div class="rows" v-for="i in arr">
+					<span class="cols" v-for="j in i">
+						{{j}}
+					</span>
+					
+				</div>
+			</div>
+			
 		</div>
 		
 		<script>
-			new Vue({
+			var vm = new Vue({
 				el: '#app',
 				data:{
+					rows:'',
+					cols:'',
+					arr:[]
 				},
 				methods:{
-					
-				}
+					comfrim:function(){
+						var num=1;
+						for(let i=0;i<this.rows;i++){
+							var obj=[]; 
+							for(let j=0;j<this.cols;j++){
+								obj[j]=num;
+								num++;
+							}
+//							this.arr[i]=obj;
+							Vue.set(vm.arr, i, obj)
+						}
+						console.log("arrrrrrrrrr",this.arr)
+					}
+				},
 			})
 		</script>
 	</body>

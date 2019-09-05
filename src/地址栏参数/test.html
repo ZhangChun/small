@@ -17,31 +17,45 @@
 			<li>4</li>
 			<li>5</li>
 		</ul>
+		<button class="btn">删除地址栏参数</button>
 		<script src="../../js/jquery-2.2.1.js"></script>
 		<script>
-			var sHref = window.location.href;
-			if(sHref.indexOf('?') < 0){
-				console.log("????")
-			}
-    		var args = sHref.split('?');
-    		console.log('sHrefffff',sHref)
-    		console.log('argssssss',args)
-//  		if(args[0] == sHref){
-//		        return "";
-//		    }
-    		var arr = args[1].split('&');
-    		var obj = {}
-    		console.log("arrrrrrrr",arr)
-    		for(let i=0;i<arr.length;i++){
-    			var arg = arr[i].split('=');
-    			console.log('arggggggggggggg',arg)
-    			obj[arg[0]] = arg[1];
-    		}
-    		console.log("OBJJJJJJJJJJJJ",obj)
-//  		if(obj.industry_category){
-//  			console.log("aaaaaa")
-//  			$(".ul").find('li').eq(obj.industry_category).addClass('active')
-//  		}
+			$(function(){
+				var sHref = window.location.href;
+				if(sHref.indexOf('?') < 0){
+					console.log("????")
+				}
+	    		var args = sHref.split('?');
+	    		console.log('sHrefffff',sHref)
+	    		console.log('argssssss',args)
+	//  		if(args[0] == sHref){
+	//		        return false;
+	//		    }
+				if(args.length == 1){
+					return ;
+				}
+	    		var arr = args[1].split('&');
+	    		var urls = {}
+	    		console.log("arrrrrrrr",arr)
+	    		for(let i=0;i<arr.length;i++){
+	    			var arg = arr[i].split('=');
+	    			console.log('arggggggggggggg',arg)
+	    			urls[arg[0]] = arg[1];
+	    		}
+	    		console.log("OBJJJJJJJJJJJJ",urls)
+	    		$('.btn').click(function(){
+	    			if(urls.type){
+	    				console.log("ssssssss")
+	    				history.pushState('', '', 'http://127.0.0.1:8020/small/src/地址栏参数/test.html?type=2');
+	    			}
+	    			
+	    		})
+	//  		if(obj.industry_category){
+	//  			console.log("aaaaaa")
+	//  			$(".ul").find('li').eq(obj.industry_category).addClass('active')
+	//  		}
+			})
+			
     		
 		</script>
 	</body>
