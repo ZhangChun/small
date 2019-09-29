@@ -6,69 +6,17 @@
 		<title></title>
 		<script src="../js/jquery-2.2.1.js"></script>
 		<style>
-			div{
-				text-align: center;
-				padding-top:50px;
-			}
-			.select{
-				width: 192px;
-			    height: 40px;
-			    line-height: 40px;
-			    border-radius: 5px;
-			    border: 1px solid #ddd;
-			    display: block;
-			    margin: auto;
-			    margin-bottom:10px;
-			    padding-left:5px;
-			}
-			.input{
-				width:180px;
-				height:35px;
-				line-height: 35px;
-				padding-left: 10px;
-				border-radius: 5px;
-				border:1px solid #ddd;
-				display: block;
-				margin: auto;
-				margin-bottom: 10px;
-			}
-			button{
-				background: #f4f4f4;
-				padding:5px 20px;
-				border-radius: 20px;
-				border:1px solid #ddd;
-			}
-			.dd{
-				width: 200px;
-				height: 200px;
-				border-top: 5px solid red;
-				border: 1px solid black;
-				padding: 50px;
-				padding-left: 100px;
-			}
 			.juxing1{
-			      width: 300px;
-			      height: 155px;
-			      margin: auto;
-			      border: 1px solid black;
-			   }
-			@media screen and (max-height:750px){
-			   .juxing1{
-			      width: 200px;
-			      height: 105px;
-			      border: 1px solid black;
-			      margin: auto;
-			   }
-			}
+		      width: 300px;
+		      height: 155px;
+		      margin: auto;
+		      background: #ddd;
+		      border-bottom-left-radius: 50%;
+		      border-bottom-right-radius: 50%;
+		   	}
 		</style>
 	</head>
 	<body>
-		<form action="uploadImage" method="post" enctype="multipart/form-data">
-		  <!--<input type="file" name="file" multiple="multiple" accept="image/*">-->
-		  <input type="file" multiple accept='image/*'>
-		  <input type="submit">
-		</form>
-		
 		<div class="juxing1">
 			
 		</div>
@@ -84,22 +32,6 @@
 		for(let i = 1;i < 10;i++){
 			console.log(sum(i));
 		}
-		$(document).ready(function(){
-			$('.btn').click(function(){
-//				$('#inputMultipartFile').click()
-				console.log("aaa")
-				$('#inputMultipartFile').on('change', function(e) {
-                    var files = e.target.files;
-                    var displayed = [];
-                    for (var i = 0, len = files.length; i < len; i++) {
-                        var url = window.URL.createObjectURL(files[i]);
-                        var _tmp = $.extend({}, {url: url, description: files[i].name.split('.')[0], file: files[i]});
-//							console.log("_tmppppppppp",_tmp)
-                        displayed.unshift(_tmp);
-                    }
-                })
-			})
-		})
 		
 		
 	</script>
