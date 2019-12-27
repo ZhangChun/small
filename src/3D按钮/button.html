@@ -4,8 +4,9 @@
 		<meta charset="UTF-8">
 		<title>3D按钮</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
 		<style>
-			div{
+			.div{
 				text-align: center;
 				padding-top: 20px;
 				box-sizing: border-box;
@@ -79,20 +80,46 @@
 		    	-webkit-box-shadow: 0 2px 0 #8bc220, 0 3px 3px rgba(0, 0, 0, 0.2);
 		        box-shadow: 0 2px 0 #8bc220, 0 3px 3px rgba(0, 0, 0, 0.2); 
 		  	}
+		  	.btns{
+		  		width: 90%;
+		  		height: 40px;
+		  		line-height: 40px;
+		  		color: #fff;
+		  		background: red;
+		  		margin: auto;
+		  		margin-top: 20px;
+		  		text-align: center;
+		  	}
 		</style>
 	</head>
 	<body>
-		<div>
-			<button class="btn1 button-3d">椭圆3D按钮</button>
+		<div id="app">
+			<div class="div">
+				<button class="btn1 button-3d">椭圆3D按钮</button>
+			</div>
+			<div class="div">
+				<button class="btn2 button-3d">方形3D按钮</button>
+			</div>
+			<div class="div">
+				<button class="btn3 button-3d">圆</button>
+			</div>
+			<div class="div">
+				<button class="btn4 button-3d">正方形</button>
+			</div>
+			<div class="btns">
+				按钮
+			</div>
 		</div>
-		<div>
-			<button class="btn2 button-3d">方形3D按钮</button>
-		</div>
-		<div>
-			<button class="btn3 button-3d">圆</button>
-		</div>
-		<div>
-			<button class="btn4 button-3d">正方形</button>
-		</div>
+		<script>
+			new Vue({
+				el: '#app',
+				data: {
+					
+				},
+				methods: {
+				  	
+				}
+			})
+		</script>
 	</body>
 </html>

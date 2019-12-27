@@ -14,11 +14,146 @@
 		      border-bottom-left-radius: 50%;
 		      border-bottom-right-radius: 50%;
 		   	}
+		   	.popup{
+		   		width: 100%;
+		   		height: 100%;
+		   		background: rgba(0,0,0,.6);
+		   		position: fixed;
+		   		top: 0;
+		   		left: 0;
+		   	}
+		   	.del{
+		   		width: 40px;
+		   		height: 40px;
+		   		line-height: 40px;
+		   		text-align: center;
+		   		position: absolute;
+		   		top: 20px;
+		   		right: 20px;
+		   		font-size: 30px;
+		   		color: #333333;
+		   	}
+		   	.popup .box1{
+		   		width: 800px;
+		   		height: 650px;
+		   		position: fixed;
+		   		top: 50%;
+		   		left: 50%;
+		   		transform: translate(-50%,-50%);
+		   		background: #fff;
+		   		border-radius: 8px;
+		   		z-index: 9999;
+		   		animation: myfirst1 .8s;
+		   		animation-fill-mode: forwards;
+		   		display: flex;
+		   		flex-direction: row;
+		   		align-items: center;
+		   		padding-left: 100px;
+		   		background-image: url(../img/tcBg.png);
+		   		background-size: 100% 100%;
+		   	}
+		   	.box1 .left{
+		   		width: 300px;
+		   		height: 500px;
+		   		border: 1px solid #ddd;
+		   		background-image: url(../img/iPhone.png);
+		   		background-size: 100% 100%;
+		   	}
+		   	.box1 .right{
+		   		flex: 1;
+		   		height: 500px;
+		   		padding: 40px;
+		   		box-sizing: border-box;
+		   	}
+		   	.right .names{
+		   		display: flex;
+		   		flex-direction: row;
+		   		font-weight: 600;
+		   		letter-spacing: 1px;
+		   	}
+		   	.right .names .d1{
+		   		color: #3EAAAE;
+		   		width: 90px;
+		   	}
+		   	.right .names .d2{
+		   		flex: 1;
+		   		max-width: 350px;
+		   		color: #000000;
+		   		overflow: hidden;
+			    text-overflow: ellipsis;
+			    white-space: nowrap;　
+		   	}
+		   	.right .desc{
+		   		display: flex;
+		   		flex-direction: row;
+		   		padding-top: 34px;
+		   		letter-spacing: 1px;
+		   	}
+		   	.right .desc .d1{
+		   		color: #3EAAAE;
+		   		width: 90px;
+		   	}
+		   	.right .desc .d2{
+		   		flex: 1;
+		   		max-width: 350px;
+		   		color: #99999A;
+		   	}
+		   	@keyframes myfirst1{
+				from {transform: translate(-50%,-50%) scale(0);}
+				to {transform: translate(-50%,-50%) scale(1);}
+			}
 		</style>
 	</head>
 	<body>
-		<div class="juxing1">
-			
+		<!--<div class="popup">
+			<div class="box1">
+				<div class="del">×</div>
+				<div class="left">
+					
+				</div>
+				<div class="right">
+					<div class="names">
+						<div class="d1">页面名称：</div>
+						<div class="d2">酷夏清凉消消乐首页  多福多寿看过觉得发拉萨肯德基逢狼阿斯利康到家了三大拉萨科技的萨拉丁拉开四季度拉萨的拉开四季度拉萨的拉克丝就打死老大阿拉山口的骄傲了是的撒时刻的</div>
+					</div>
+					<div class="desc">
+						<div class="d1">
+							页面描述：
+						</div>
+						<div class="d2">
+				         	导航自定义分类、首页模块可自由组合或隐藏、可绑定独立域名兼容的浏览器
+							桌面端：IE11及以上，Firefox latest，Safari latest，
+							手机端：ios9 safari   部分安卓机原生浏览器
+							产品中部分图片来源于互联网。    
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>-->
+		<style>
+			.table{
+				width: 60%;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				margin: 200px auto;
+			}
+			.list{
+				width: 30px;
+			}
+		</style>
+		<div class="table">
+			<div class="list">
+				<div class="li">7</div>
+			</div>
+			<div class="list">
+				<div class="li">4</div>
+			</div>
+			<div class="list">
+				<div class="li">7</div>
+				<div class="li">9</div>
+				<div class="li">8</div>
+			</div>
 		</div>
 	</body>
 	<script>
@@ -32,6 +167,81 @@
 		for(let i = 1;i < 10;i++){
 			console.log(sum(i));
 		}
+		$(function(){
+			let arr = [
+			    {a: 7, b: 5},
+			    {a: 1, b: 4},
+			    {a: 7, b: 4},
+			    {a: 9, b: 0},
+			    {a: 8, b: 7},
+			    {a: 0, b: 6},
+			    {a: 9, b: 0},
+			    {a: 7, b: 5},
+			    {a: 7, b: 3},
+			    {a: 2, b: 2},
+			    {a: 4, b: 2},
+			    {a: 9, b: 7},
+			    {a: 7, b: 3},
+			    {a: 3, b: 1},
+			    {a: 4, b: 6},
+			    {a: 5, b: 5}
+			];
+			let arrs = [],temp = [];
+			let a=1,b=1;
+			for(let i=0;i<arr.length;i++){
+				if(arr[i].a >= arr[i].b){
+					if(a == 0){
+						arrs.push(temp);
+						temp = [];
+						temp.push(arr[i].a);
+						a += 1;
+						b = 0;
+						if(i == arr.length - 1){
+							arrs.push(temp)
+						}
+					}else{
+						temp.push(arr[i].a);
+						a += 1;
+						b = 0;
+						if(i == arr.length - 1){
+							arrs.push(temp)
+						}
+					}
+					
+				}else {
+					if(b == 0){
+						arrs.push(temp);
+						temp = [];
+						temp.push(arr[i].b);
+						b += 1;
+						a = 0;
+						if(i == arr.length - 1){
+							arrs.push(temp)
+						}
+					}else{
+						temp.push(arr[i].b);
+						b += 1;
+						a = 0;
+						if(i == arr.length - 1){
+							arrs.push(temp)
+						}
+					}
+					
+				}
+			}
+			let leng = arrs[0].length; 
+			for(let i = 0;i< arrs.length-1; i++){
+				leng = leng < arrs[i+1].length ? arrs[i+1].length : leng
+			}
+			for(let i = 0;i< leng;i++){
+				for(let j = 0;j<arrs.length;j++){
+					if(arrs[j].length < leng){
+						arrs[j].push('');
+					}
+				}
+			}
+			console.log('arrsssssss',arrs)
+		})
 		
 		
 	</script>
