@@ -1,16 +1,32 @@
 <template>
   <div class="warp">
-    <div class="fabu box" ref="box" data-dom="box" @touchstart="touchstart" @touchmove="touchmove" @touchend="touchend" @click="fabu()"></div>
+    <!--<div class="fabu box" ref="box" data-dom="box" @touchstart="touchstart" @touchmove="touchmove" @touchend="touchend" @click="fabu()"></div>
     <div class="btn" @click="link('pubu')">瀑布流显示</div>
     <div class="btn" @click="link('spwer1')">轮播1</div>
-    <div class="btn" @click="link('spwer2')">轮播2</div>
+    <div class="btn" @click="link('spwer2')">轮播2</div>-->
+    <comt></comt>
+    <comt></comt>
+    <comt></comt>
+    <h1>{{content}}</h1>
+    <button @click="update()">点击修改</button>
+    
+    <div>vuex：{{$store.state.count}}</div>
+    <button @click="handleAddClick(10)">增加</button> 
+ 		<button @click="handleReduceClick(10)">减少</button> 
+ 		
+ 		<button @click="handleActionsAdd(10)">异步增加</button> 
+ 		<button @click="handleActionsReduce(10)">异步减少</button> 
   </div>
 </template>
 
 <script>
 	import axios from 'axios';
+	import comt from '../components/common/module/comt.vue'
 	export default {
 	  name: 'HelloWorld',
+	  components:{
+	    	comt
+	  },
 	  data () {
 	    return {
 	      msg: '首页',
@@ -20,15 +36,53 @@
 	      isOpenDrop: true,//是否开启拖拽
 	      isTouch: false,//默认为没有触摸
 	      itemX: 0,//触摸点与拖拽体的间距x
-	      itemY: 0//触摸点与拖拽体的间距y
+	      itemY: 0,//触摸点与拖拽体的间距y
+	      content: '这是一段内容',
 	    }
 	  },
+	  beforeCreate(){
+	  	console.log('创建前')
+	  	
+	  },
+	  created(){
+	  	console.log('创建后')
+	  },
+	  beforeMount(){
+	  	console.log('载入前')
+	  },
 		mounted:function(){
-
+			console.log('载入后')
+		},
+		beforeUpdate(){
+			console.log('更新前')
+		},
+		updated(){
+			console.log('更新后')
+		},
+		beforeDestroy(){
+			console.log('销毁前')
+		},
+		destroyed(){
+			console.log('销毁后')
 		},
 	  methods:{
+	  	update(){
+	  		this.content = '这是修改后的内容';
+	  	},
+	  	handleAddClick(n){ 
+			 this.$store.commit('mutationsAddCount',n); 
+			 }, 
+			 handleReduceClick(n){ 
+			 this.$store.commit('mutationsReduceCount',n); 
+			 }, 
+			handleActionsAdd(n){ 
+			 this.$store.dispatch('actionsAddCount',n) 
+			 }, 
+			 handleActionsReduce(n){ 
+			 this.$store.dispatch('actionsReduceCount',n) 
+			 }, 
 	  	// 打开发布弹窗
-	  	fabu(){
+	  	fabu(){      
 	  		this.$router.push({name:'upload'});
 	  	},
 	  	link(url){

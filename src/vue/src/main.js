@@ -9,6 +9,7 @@ import './assets/js/wxConfig1.js'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import VueLazyload from 'vue-lazyload' //懒加载
+import store from './vuex/store' // 引入store 
 import  VConsole  from  'vconsole' //绿标
 //const  vConsole = new VConsole() //注意 
 Vue.use(VueLazyload)
@@ -50,6 +51,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
